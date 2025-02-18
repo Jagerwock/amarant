@@ -1,0 +1,46 @@
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dark Souls Lobby</title>
+  <link rel="stylesheet" href="./styles.css" type="text/css">
+  <script src="./scripts.js" defer></script>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-links">
+      <a href="#lore" class="nav-item" data-section="lore">Lore</a>
+      <a href="#armas" class="nav-item" data-section="armas">Armas</a>
+      <a href="#jefes" class="nav-item" data-section="jefes">Jefes</a>
+      <a href="#lugares" class="nav-item" data-section="lugares">Lugares</a>
+      <a href="#magias" class="nav-item" data-section="magias">Magias</a>
+      <a href="#personajes" class="nav-item" data-section="personajes">Personajes</a>
+      <a href="#enemigos" class="nav-item" data-section="enemigos">Enemigos</a>
+      <a href="#trofeos" class="nav-item" data-section="trofeos">Trofeos</a>
+    </div>
+    <div class="user-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#d4af37" viewBox="0 0 24 24">
+        <path d="M12 2a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 11c4.97 0 9 4.03 9 9H3c0-4.97 4.03-9 9-9Z"/>
+      </svg>
+    </div>
+  </nav>
+  
+  <div id="content-area">
+    <!-- Aquí se inyecta el contenido (por ejemplo, la sección de jefes) -->
+  </div>
+  
+  <!-- Modal para mostrar detalles del jefe -->
+  <div id="boss-modal" class="modal">
+    <div class="arrow arrow-left">&#10094;</div>
+    <div class="modal-content">
+      <span class="close-button">&times;</span>
+      <div id="boss-details">
+        <!-- Aquí se inyectará la información del jefe -->
+      </div>
+    </div>
+    <div class="arrow arrow-right">&#10095;</div>
+  </div>
+</body>
+</html>
+
+    
