@@ -2078,57 +2078,53 @@ document.addEventListener("DOMContentLoaded", function() {
   };
 
   let currentIndex = 0;
-  let isTransitioning = false; 
+let isTransitioning = false; // Controla si hay una animación en curso
 
-  const bossList = [
-    "Demonio del refugio",
-    "Demonio Salvaje",
-    "Demonio de Tauro",
-    "Demonio de Aries",
-    "Gárgolas Campana",
-    "Dragón Boquiabierto",
-    "Quelaag la Bruja del Caos",
-    "Mariposa Lunar",
-    "Sif, el Gran Lobo Gris",
-    "Golem de Hierro",
-    "Gwyndolin el Sol Oscuro",
-    "Ornstein & Smough",
-    "Priscilla la Mestiza",
-    "Seath el Descamado",
-    "Molinete",
-    "Nito el Rey del Cementerio",
-    "Cuatro Reyes",
-    "Descarga Incesante",
-    "Sabio del Fuego Demoníaco",
-    "Demonio Ciempiés",
-    "Lecho del Caos",
-    "Gwyn, Señor de la Ceniza",
-    "Guardián del Santuario",
-    "Caballero Artorias",
-    "Kalameet, el Dragón Negro",
-    "Manus, Padre del Abismo"
-  ];
+const bossList = [
+  "Demonio del refugio",
+  "Demonio Salvaje",
+  "Demonio de Tauro",
+  "Demonio de Aries",
+  "Gárgolas Campana",
+  "Dragón Boquiabierto",
+  "Quelaag la Bruja del Caos",
+  "Mariposa Lunar",
+  "Sif, el Gran Lobo Gris",
+  "Golem de Hierro",
+  "Gwyndolin el Sol Oscuro",
+  "Ornstein & Smough",
+  "Priscilla la Mestiza",
+  "Seath el Descamado",
+  "Molinete",
+  "Nito el Rey del Cementerio",
+  "Cuatro Reyes",
+  "Descarga Incesante",
+  "Sabio del Fuego Demoníaco",
+  "Demonio Ciempiés",
+  "Lecho del Caos",
+  "Gwyn, Señor de la Ceniza",
+  "Guardián del Santuario",
+  "Caballero Artorias",
+  "Kalameet, el Dragón Negro",
+  "Manus, Padre del Abismo"
+];
 
 /**********************
  * Funciones Flechas  *
  **********************/
 function nextBoss() {
   currentIndex = (currentIndex + 1) % bossList.length;
-  // Llamamos a openBossModal indicando dirección "next"
   openBossModal(bossList[currentIndex], 'next');
 }
 
 function prevBoss() {
   currentIndex = (currentIndex - 1 + bossList.length) % bossList.length;
-  // Llamamos a openBossModal indicando dirección "prev"
   openBossModal(bossList[currentIndex], 'prev');
 }
 
-// Hacemos que estas funciones sean globales (si utilizas onclick en el HTML)
 window.nextBoss = nextBoss;
 window.prevBoss = prevBoss;
 
-// Asignamos los event listeners a las flechas cuando el DOM esté listo
 document.addEventListener("DOMContentLoaded", function() {
   const arrowLeft = document.querySelector(".arrow-left");
   const arrowRight = document.querySelector(".arrow-right");
@@ -2140,29 +2136,27 @@ document.addEventListener("DOMContentLoaded", function() {
 /**********************
  * Función openBossModal *
  **********************/
-
 function openBossModal(bossName, direction = 'next') {
-  // Si hay una transición en curso, no iniciamos otra
+  // Si ya hay una transición, salimos
   if (isTransitioning) return;
-  isTransitioning = true; // Bloqueamos nuevas transiciones
+  isTransitioning = true;
 
-  // Actualizamos el índice actual
   currentIndex = bossList.indexOf(bossName);
   const modal = document.getElementById("boss-modal");
   const bossDetailsContainer = document.getElementById("boss-details");
-  const details = bossDetails[bossName]; // Asegúrate de tener definido el objeto bossDetails
+  const details = bossDetails[bossName]; // Asegúrate de que 'bossDetails' esté definido
 
   if (!details) {
     bossDetailsContainer.innerHTML = `<p>No hay información disponible para ${bossName}.</p>`;
     modal.classList.add("active");
-    isTransitioning = false; // Liberamos la bandera
+    isTransitioning = false;
     return;
   }
 
   /**********************
    * Generación del contenido (Calling Card) *
    **********************/
-  // Ejemplo: Generación de la tabla de estadísticas
+  // Aquí se genera la tabla de estadísticas y demás secciones (puedes conservar tu código actual)
   let statsTable = "";
   if (bossName === "Ornstein & Smough") {
     const levels = ["NG", "NG+1", "NG+2", "NG+3", "NG+4", "NG+5", "NG+6"];
@@ -2254,7 +2248,6 @@ function openBossModal(bossName, direction = 'next') {
     `;
   }
 
-  // Otras secciones (invocación, debilidades, drops, movimientos, estrategias, lore y curiosidades)
   const summoningSection = details.summoning
     ? `<div class="boss-summoning">
          <h3 style="font-size: 28px;">Invocación</h3>
@@ -2277,7 +2270,6 @@ function openBossModal(bossName, direction = 'next') {
   if (bossName === "Ornstein & Smough") {
     const bossMoves = details.moves;
     movesList += `<div class="boss-moves-divisions">`;
-    // Ornstein
     movesList += `<div class="boss-move-division" style="margin-bottom: 20px;">
                     <h4 style="font-size: 28px; text-align: left; margin-bottom: 10px;">Ornstein</h4>
                     <ul style="list-style-position: inside; text-align: left;">${
@@ -2286,7 +2278,6 @@ function openBossModal(bossName, direction = 'next') {
                         : `<li>Sin movimientos definidos para Ornstein</li>`
                     }</ul>
                   </div>`;
-    // Super Ornstein
     movesList += `<div class="boss-move-division" style="margin-bottom: 20px;">
                     <h4 style="font-size: 28px; text-align: left; margin-bottom: 10px;">Super Ornstein</h4>
                     <ul style="list-style-position: inside; text-align: left;">${
@@ -2295,7 +2286,6 @@ function openBossModal(bossName, direction = 'next') {
                         : `<li>Sin movimientos definidos para Super Ornstein</li>`
                     }</ul>
                   </div>`;
-    // Smough
     movesList += `<div class="boss-move-division" style="margin-bottom: 20px;">
                     <h4 style="font-size: 28px; text-align: left; margin-bottom: 10px;">Smough</h4>
                     <ul style="list-style-position: inside; text-align: left;">${
@@ -2304,7 +2294,6 @@ function openBossModal(bossName, direction = 'next') {
                         : `<li>Sin movimientos definidos para Smough</li>`
                     }</ul>
                   </div>`;
-    // Super Smough
     movesList += `<div class="boss-move-division" style="margin-bottom: 20px;">
                     <h4 style="font-size: 28px; text-align: left; margin-bottom: 10px;">Super Smough</h4>
                     <ul style="list-style-position: inside; text-align: left;">${
@@ -2385,39 +2374,45 @@ function openBossModal(bossName, direction = 'next') {
   `;
 
   /**********************
-   * Animación SWAP: Transición simultánea *
+   * Animación: Transición suave *
    **********************/
   // Creamos un nuevo elemento a partir del HTML generado
   const tempDiv = document.createElement("div");
   tempDiv.innerHTML = newBossHTML;
   const newDetail = tempDiv.firstElementChild;
 
-  // Obtenemos la tarjeta anterior (si existe)
-  const oldDetail = bossDetailsContainer.querySelector('.boss-detail');
+  // Obtenemos la tarjeta actual (si existe)
+  const existingDetail = bossDetailsContainer.querySelector('.boss-detail');
 
-  // Insertamos la nueva tarjeta sin eliminar la anterior para lograr el efecto "swap"
-  bossDetailsContainer.appendChild(newDetail);
+  // Si el modal no está activo o no hay tarjeta actual, usamos una animación de "fade in"
+  if (!modal.classList.contains("active") || !existingDetail) {
+    bossDetailsContainer.innerHTML = newBossHTML;
+    const newElem = bossDetailsContainer.querySelector('.boss-detail');
+    newElem.classList.add('fade-in'); // Asegúrate de definir 'fade-in' en tu CSS
+    newElem.addEventListener("animationend", function handleAnimationEnd() {
+      newElem.removeEventListener("animationend", handleAnimationEnd);
+      isTransitioning = false;
+    });
+  } else {
+    // Si el modal ya está activo, realizamos el swap (transición simultánea)
+    bossDetailsContainer.appendChild(newDetail);
 
-  // Determinamos las clases de animación según la dirección
-  const exitClass = (direction === 'next') ? 'slide-out-left' : 'slide-out-right';
-  const enterClass = (direction === 'next') ? 'slide-in-right' : 'slide-in-left';
+    // Determinamos las clases de animación según la dirección
+    const exitClass = (direction === 'next') ? 'slide-out-left' : 'slide-out-right';
+    const enterClass = (direction === 'next') ? 'slide-in-right' : 'slide-in-left';
 
-  // Iniciamos las animaciones simultáneas
-  newDetail.classList.add(enterClass);
-  if (oldDetail) {
-    oldDetail.classList.add(exitClass);
+    newDetail.classList.add(enterClass);
+    existingDetail.classList.add(exitClass);
+
+    newDetail.addEventListener("animationend", function handleAnimationEnd() {
+      if (existingDetail) {
+        existingDetail.remove();
+      }
+      newDetail.removeEventListener("animationend", handleAnimationEnd);
+      isTransitioning = false;
+    });
   }
 
-  // Cuando la animación de entrada termine, eliminamos la tarjeta antigua y liberamos la transición
-  newDetail.addEventListener("animationend", function handleAnimationEnd() {
-    if (oldDetail) {
-      oldDetail.remove();
-    }
-    newDetail.removeEventListener("animationend", handleAnimationEnd);
-    isTransitioning = false; // Liberamos la bandera para permitir nuevas transiciones
-  });
-
-  // Mostramos el modal
   modal.classList.add("active");
 }
 
