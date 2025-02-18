@@ -2518,4 +2518,4 @@ addCardClickListeners();
 
 // Inicializa la sección por defecto
 updateContent("jefes");
-}(();
+})();
