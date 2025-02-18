@@ -28,24 +28,24 @@ const bossDetails = {
       { name: "Impulso del martillo", description: "Cuando el jugador este defrente del demonio, este lanzara un ataque de corto rango imposible de bloquear." },
       { name: "Golpe de martillo", description: "Un barrido horizontal amplio con el martillo, es facil de evitar debido a su deficiente seguimiento." },
       { name: "Retroceso del martillo", description: "Cuando el jugador este a su derecha, hara una balanceo de retroceso, puede esquivarse si se rueda en el ultimo momento." },
-      { name: "Barrido lateral del martillo", description: "Misma idea del retroceo del martillo, pero se activa cuando el jugador este a su izquierda." },
+      { name: "Barrido lateral del martillo", description: "Misma idea del retroceso del martillo, pero se activa cuando el jugador este a su izquierda." },
       { name: "Martillazo", description: "Un golpe descendente con gran alcance, abarca una zona amplia, se puede esquiva con facilidad." },
       { name: "Martillazo saltante", description: "Cuando el jugador este lejos, el demonio vuela lentamente para luego dejar caer un golpe devastador, debido a su movimiento es facil de esquivar." },
-      { name: "Doble balanceo del martillo", description: "Una secuencia de dos balanceos seguidos, tiene un movimiento facil de predecir, pero pueden ir seguidos de un martillazo adicional." },
+      { name: "Doble balanceo del martillo", description: "Una secuencia de dos balanceos seguidos, tiene un movimiento facil de predecir, pero pueden ir seguidos de un martillazo adicional." }
     ],
     bestStrategies: `
-              El primer enfrentamiento con el Demonio del Refugio es opcional, y para aquellos que inician su primera partida, se recomienda encarecidamente evitar el combate saliendo de la sala. Sin embargo, si el jugador ha recibido las Bombas Fuego Negras como obsequio inicial, estas pueden emplearse para derrotar al demonio de forma rápida.
+              El primer enfrentamiento con el <a href="">Demonio del Refugio</a> es opcional, y para aquellos que inician su primera partida, se recomienda encarecidamente evitar el combate saliendo de la sala. Sin embargo, si el jugador ha recibido las Bombas Fuego Negras como obsequio inicial, estas pueden emplearse para derrotar al demonio de forma rápida.
               Para el segundo encuentro, una vez atravesada la niebla, equípate el arma a dos manos y salta de la plataforma, 
               atacando para hacerle mucho daño.
               El demonio es lento y predecible. Lo ideal es rodear al jefe y atacarlo después de que haya ejecutado alguno de sus ataques lentos.
               Si tienes dificultad para quedarte cerca de él, siempre puedes optar por usar piromancia o magia.
               `,
     lore: `
-      <a href="">El Demonio del Refugio</a> es un demonio menor que emergió del <a href="">Lecho del Caos</a>, la entidad que apareció tras el intento de la <a href="">Bruja de Izalith</a> de generar un poder similar a la Primera Llama utilizando su Alma de Señor. Dicho experimento tuvo éxito, dando lugar a la Llama del Caos, mientras que Izalith y su poderosa alma se convirtieron en el semillero de una nueva forma de vida: la madre y origen de todos los demonios.
+      <a href="">El Demonio del Refugio</a> es un demonio menor que emergió del <a href="">Lecho del Caos</a>, la entidad que apareció tras el intento de la <a href="">Bruja de Izalith</a> de generar un poder similar a la Primera Llama utilizando su <a href="">Alma de Señor</a>. Dicho experimento tuvo éxito, dando lugar a la Llama del Caos, mientras que <a href="">Izalith</a> y su poderosa alma se convirtieron en el semillero de una nueva forma de vida: la madre y origen de todos los demonios.
       <br><br>
-      Tras su nacimiento, el Demonio del Refugio sobrevivió a la guerra librada por los Caballeros Plateados de Gwyn, Señor de la Luz Solar, contra su propia especie, y logró escapar de las ruinas de Izalith Perdida llevándose consigo su imponente Gran Martillo Demoníaco, forjado a partir de arboledas de piedra.
+      Tras su nacimiento, el <a href="">Demonio del Refugio</a> sobrevivió a la guerra librada por los <a href="">Caballeros Plateados</a> de <a href="">Gwyn, Señor de la Luz Solar</a>, contra su propia especie, y logró escapar de las ruinas de Izalith Perdida llevándose consigo su imponente <a href="">Gran Martillo Demoníaco</a>, forjado a partir de arboledas de piedra.
       <br><br>
-      Deambuló por Lordran hasta establecerse en el Refugio de los No Muertos, la prisión concebida para mantener encerrados a los No Muertos hasta el final de los tiempos, transformándola en su dominio.
+      Deambuló por <a href="">Lordran</a> hasta establecerse en el <a href="">Refugio de los No Muertos</a>, la prisión concebida para mantener encerrados a los No Muertos hasta el final de los tiempos, transformándola en su dominio.
     `,
     curiosities: [
       { 
@@ -93,18 +93,18 @@ const bossDetails = {
       { name: "Doble balanceo del martillo", description: "Parecido al Demonio del Refugio, hara una secuencia de dos balanceos seguidos, tiene un movimiento facil de predecir, pero pueden ir seguidos de un golpe adicional, puede ser bloqueado a costo de mucha estamina." },
     ],
     bestStrategies: `
-              El jugador caerá a través del suelo, recibiendo algo de daño y quedando frente al Demonio Salvaje. Es crucial usar el hechizo Controlar caida antes del combate. 
-              A diferencia del Demonio del Refugio, el Demonio Salvaje empuña un arma tipo catalizador que desata poderosas explosiones mágicas.<br> <br>
+              El jugador caerá a través del suelo, recibiendo algo de daño y quedando frente al <a href="">Demonio Salvaje</a>. Es crucial usar el hechizo Controlar caida antes del combate. 
+              A diferencia del <a href="">Demonio del Refugio</a>, el <a href="">Demonio Salvaje</a> empuña un arma tipo catalizador que desata poderosas explosiones mágicas.<br> <br>
               Dispone de dos ataques de área: uno consiste en un barrido horizontal que lanza una explosión frontal difícil de evadir, y el otro se anuncia al clavar el catalizador en el suelo, generando una explosión centrada que también impacta la zona trasera. 
               En este contexto, el Escudo con Emblema (obtenido de Oscar de Astora) resulta muy útil para mitigar el daño. <br><br>
               Lo ideal es atacar al demonio desde atrás y mantenerse pegado a él, ya que así se evitan sus golpes y explosiones, especialmente el ataque descendente que puede afectar incluso su cola. 
-              Además, el Demonio Salvaje es vulnerable al daño por sangrado y recibe daño extra de las armas del Caballero Negro, lo que lo hace más fácil de derribar si se emplean armas de sangrado.`,
+              Además, el <a href="">Demonio Salvaje</a> es vulnerable al daño por sangrado y recibe daño extra de las armas del <a href="">Caballero Negro</a>, lo que lo hace más fácil de derribar si se emplean armas de sangrado.`,
     lore: `
-      El Demonio Salvaje es un demonio superior nacido del Lecho de Caos tras el audaz experimento de la Hechicera de Izalith, quien intentó emular el poder de la Primera Llama utilizando su Alma de Señor. 
-      Su experimento dio origen a la Llama del Caos y convirtió a Izalith en el caldo de cultivo que engendró la madre y origen de todos los demonios.
+      <a href="">El Demonio Salvaje</a> es un demonio superior nacido del Lecho de Caos tras el audaz experimento de la <a href=""><a href="">Hechicera de Izalith</a>, quien intentó emular el poder de la Primera Llama utilizando su <a href="">Alma de Señor</a>. 
+      Su experimento dio origen a la Llama del Caos y convirtió a <a href="">Izalith</a> en el caldo de cultivo que engendró la madre y origen de todos los demonios.
       <br><br>
-      Tras su nacimiento, el Demonio Salvaje sobrevivió a la brutal guerra librada por los Caballeros de Plata de Gwyn, Señor de la Luz Solar, contra su especie. 
-      Finalmente, escapó de las ruinas de Lost Izalith y deambuló por Lordran hasta establecer su dominio en el Refugio de los No Muertos, la prisión destinada a encerrar a los No Muertos hasta el fin de los tiempos.
+      Tras su nacimiento, el <a href="">Demonio Salvaje</a> sobrevivió a la brutal guerra librada por los <a href="">Caballeros de Plata</a> de <a href="">Gwyn, Señor de la Luz Solar</a>, contra su especie. 
+      Finalmente, escapó de las ruinas de <a href="">Izalith Perdida</a> y deambuló por <a href="">Lordran</a> hasta establecer su dominio en el <a href="">Refugio de los No Muertos</a>, la prisión destinada a encerrar a los <a href="">No Muertos</a> hasta el fin de los tiempos.
     `,
     curiosities: [
       { 
@@ -150,20 +150,20 @@ const bossDetails = {
       { name: "Salto Masivo", description: "Si permaneces demasiado tiempo en la almena donde estaban los ballesteros, el Demonio Tauro saltará y se estrellará contra la torre, causándose daño y ganando acceso a la parte superior. Este ataque es sorpresivo y puede empujarte al borde, haciéndote caer al vacío y morir." },
     ],
     bestStrategies: `
-            Aplicar Resina de Pino Dorada, encontrada en el Burgo de los No Muertos, facilita el combate, ya que el jefe es muy vulnerable al rayo. Es recomendable usarla si la pelea resulta complicada.<br><br>
-            Los ataques a distancia no son muy efectivos, ya que el Demonio Tauro cierra la distancia rápidamente. Además, quedarse mucho tiempo en la torre hará que salte hacia ti. 
+            Aplicar <a href="">Resina de Pino Dorada</a>, encontrada en el <a href="">Burgo de los No Muertos</a>, facilita el combate, ya que el jefe es muy vulnerable al rayo. Es recomendable usarla si la pelea resulta complicada.<br><br>
+            Los ataques a distancia no son muy efectivos, ya que el <a href="">Demonio Tauro</a> cierra la distancia rápidamente. Además, quedarse mucho tiempo en la torre hará que salte hacia ti. 
             Sus pies pueden dañarte si estás demasiado cerca mientras se mueve. Aunque el daño es bajo, puede ser molesto si tienes poco aplomo. <br><br>
-            El Demonio Tauro puede tambalearse si recibe suficiente daño por equilibrio, lo que interrumpe sus ataques. Esto suele ocurrir con armas grandes en una cadena de golpes, pero depender de esta estrategia es arriesgado. <br><br>
-            Un método rápido para derrotar al Demonio Tauro es subir la torre junto a la entrada y realizar un ataque en picado desde arriba. Antes de activar al jefe, es crucial eliminar a los dos soldados no muertos en la torre para evitar interferencias.
-            Es importante ser rápido al subir, ya que el Demonio Tauro puede golpear al jugador en la escalera. Si se permanece demasiado tiempo en la torre, el jefe puede saltar hasta ella, lo que puede aprovecharse para descender y prepararse para otro ataque.
+            El <a href="">Demonio Tauro</a> puede tambalearse si recibe suficiente daño por equilibrio, lo que interrumpe sus ataques. Esto suele ocurrir con armas grandes en una cadena de golpes, pero depender de esta estrategia es arriesgado. <br><br>
+            Un método rápido para derrotar al <a href="">Demonio Tauro</a> es subir la torre junto a la entrada y realizar un ataque en picado desde arriba. Antes de activar al jefe, es crucial eliminar a los dos soldados no muertos en la torre para evitar interferencias.
+            Es importante ser rápido al subir, ya que el <a href="">Demonio Tauro</a> puede golpear al jugador en la escalera. Si se permanece demasiado tiempo en la torre, el jefe puede saltar hasta ella, lo que puede aprovecharse para descender y prepararse para otro ataque.
             Una estrategia efectiva es esperar a que el Demonio baje, subir rápidamente y lanzar bombas incendiarias para acabar con él rápidamente. Durante la carrera de regreso, atacar sus piernas puede causar daño adicional. Además, aplicar resina de pino dorado potenciará el daño de esta táctica.<br><br>
-            Es posible hacer que el Demonio Tauro salte de la pared si usas un buen escudo para bloquear y posicionarte estratégicamente.`,
+            Es posible hacer que el <a href="">Demonio Tauro</a> salte de la pared si usas un buen escudo para bloquear y posicionarte estratégicamente.`,
     lore: `
-      Los Demonios Tauro son criaturas menores nacidas del Lecho del Caos, la entidad surgida tras el fallido intento de la Bruja de Izalith por recrear la Primera Llama con su Alma de Señor. Aunque logró crear la Llama del Caos, Izalith y su alma se convirtieron en el origen de todos los demonios.
+      Los <a href="">Demonios Tauro</a> son criaturas menores nacidas del <a href="">Lecho del Caos</a>, la entidad surgida tras el fallido intento de la <a href="">Bruja de Izalith</a> por recrear la Primera Llama con su <a href="">Alma de Señor</a>. Aunque logró crear la Llama del Caos, <a href="">Izalith</a> y su alma se convirtieron en el origen de todos los demonios.
       <br><br>
-      A pesar de la guerra contra los Caballeros Plateados de Gwyn, muchos Demonios Tauro lograron sobrevivir. En algún momento, uno de ellos escapó de Lost Izalith, llevando consigo una Gran Hacha de Demonio, forjada con los huesos de otros demonios. 
-      Este demonio llegó hasta la zona alta del Burgo de los No Muertos, una ciudad fortificada que cayó en ruinas, convirtiéndola en su dominio. <br><br>
-      Mientras tanto, otros Demonios Tauro continuaron habitando las ruinas de su antiguo hogar, a pesar de su decadencia.
+      A pesar de la guerra contra los <a href="">Caballeros Plateados</a> de <a href="">Gwyn</a>, muchos Demonios Tauro lograron sobrevivir. En algún momento, uno de ellos escapó de <a href="">Izalith Perdida</a>, llevando consigo una <a href="">Gran Hacha de Demonio</a>, forjada con los huesos de otros demonios. 
+      Este demonio llegó hasta la zona alta del <a href="">Burgo de los No Muertos<a/>, una ciudad fortificada que cayó en ruinas, convirtiéndola en su dominio. <br><br>
+      Mientras tanto, otros <a href="">Demonios Tauro</a> continuaron habitando las ruinas de su antiguo hogar, a pesar de su decadencia.
     `,
     curiosities: [
       { 
@@ -211,21 +211,21 @@ const bossDetails = {
       { name: "Golpe Demoledor", description: "Su ataque más poderoso consiste en elevar ambas espadas y bajarlas en un golpe vertical demoledor. Aunque no se puede bloquear y causa un daño considerable, su larga preparación y animación evidente lo hacen fácil de esquivar." },
     ],
     bestStrategies: `
-              La batalla contra el Demonio de Aries se desarrolla en una sala pequeña y confinada, lo que dificulta la recuperación de salud y estamina. 
-              Es crucial eliminar rápidamente a los dos Perros Hueco, ya que pueden aturdir a jugadores con bajo Equilibrio y atraparlos en una esquina.<br> <br>
+              La batalla contra el <a href="">Demonio de Aries</a> se desarrolla en una sala pequeña y confinada, lo que dificulta la recuperación de salud y estamina. 
+              Es crucial eliminar rápidamente a los dos <a href="">Perros Hueco</a>, ya que pueden aturdir a jugadores con bajo <a href="">Equilibrio</a> y atraparlos en una esquina.<br> <br>
               Subir las escaleras permite utilizar ataques a distancia y recuperarse, ya que el jefe, aunque lo sigue, se ve frenado por la barandilla, lo que facilita esquivar sus ataques. 
               Los usuarios de hechizos pueden aprovechar una posición en el arco sobre la puerta para atacar sin exponerse a su ataque de salto, que tiene un largo tiempo de recuperación.<br><br>
               Una vez neutralizados los perros, retrocede hacia el estrecho puente en la parte superior de las escaleras. 
-              Desde esa posición, atrae al Demonio de Aries hasta la cima y, usando el escudo para bloquear, espera el momento en que pierda el equilibrio al caer para contraatacar con golpes rápidos. 
-              Además, dado que el Demonio de Aries es débil al fuego, aplicar Resina pino negra a tus armas potenciará tu daño en combate cuerpo a cuerpo. <br><br>
-              Si prefieres evitar el combate directo, puedes optar por atacar desde fuera de la arena: utiliza un arco junto con bombas de fuego para dañar al Demonio de Aries sin exponerte demasiado. 
+              Desde esa posición, atrae al <a href="">Demonio de Aries</a> hasta la cima y, usando el escudo para bloquear, espera el momento en que pierda el equilibrio al caer para contraatacar con golpes rápidos. 
+              Además, dado que el <a href="">Demonio de Aries</a> es débil al fuego, aplicar <a href="">Resina de Pino Negra</a> a tus armas potenciará tu daño en combate cuerpo a cuerpo. <br><br>
+              Si prefieres evitar el combate directo, puedes optar por atacar desde fuera de la arena: utiliza un arco junto con bombas de fuego para dañar al <a href="">Demonio de Aries</a> sin exponerte demasiado. 
               Alternativamente, si optas por una táctica de tanque, equipa un escudo de alta estabilidad, armadura pesada y anillos defensivos para bloquear sus ataques y contraatacar cuando se presente la oportunidad, asegurándote de mantener siempre un buen manejo de la estamina.`,
     lore: `
-      Los Demonios de Aries son seres infernales menores surgidos del Lecho del Caos. 
-      Se originaron tras el intento de la Bruja de Izalith de emular el poder de la Primera Llama utilizando su Alma de Señor, lo que dio lugar a la creación de la Llama del Caos y convirtió a Izalith en el semillero de una nueva forma de vida: la madre y fuente de todos los demonios.
+      Los Demonios de Aries son seres infernales menores surgidos del <a href="">Lecho del Caos</a>. 
+      Se originaron tras el intento de la <a href="">Bruja de Izalith</a> de emular el poder de la Primera Llama utilizando su <a href="">Alma de Señor</a>, lo que dio lugar a la creación de la Llama del Caos y convirtió a <a href="">Izalith</a> en el semillero de una nueva forma de vida: la madre y fuente de todos los demonios.
       <br><br>
-      A pesar de la implacable guerra librada por los Caballeros de Plata de Gwyn contra estos seres, muchos lograron sobrevivir. 
-      Uno de ellos escapó de las ruinas de Izalith Perdida portando dos enormes Machetes Demoníacos de hierro fundido y se estableció en la sección inferior del Burgo de los No Muertos, una ciudad fortificada en decadencia que se convirtió en su dominio, llegando incluso a someter a dos Perros Hueco. 
+      A pesar de la implacable guerra librada por los <a href="">Caballeros de Plata</a> de <a href="">Gwyn</a> contra estos seres, muchos lograron sobrevivir. 
+      Uno de ellos escapó de las ruinas de <a href="">Izalith Perdida</a> portando dos enormes <a href="">Machetes Demoníacos</a> de hierro fundido y se estableció en la sección inferior del Burgo de los No Muertos, una ciudad fortificada en decadencia que se convirtió en su dominio, llegando incluso a someter a dos Perros Hueco. 
       Otros persistieron en habitar los vestigios de su antigua morada, aun en medio de la ruina.
     `,
     curiosities: [
@@ -287,14 +287,14 @@ const bossDetails = {
     ],
     bestStrategies: `
               Utiliza un buen escudo para bloquear ataques físicos, aunque el fuego seguirá causando daño. Mantente fuera de su alcance cuando aparezca la segunda gárgola y prioriza derrotar a la primera para reducir la presión del combate. 
-              Las gárgolas son vulnerables al fuego y a la electricidad, por lo que las bombas incendiarias y la resina pino dorada pueden ser muy efectivas. <br><br>
+              Las <a href="">Gárgolas Campana</a> son vulnerables al fuego y a la electricidad, por lo que las bombas incendiarias y la resina pino dorada pueden ser muy efectivas. <br><br>
               Aprovecha su frecuente uso del fuego para golpear sus costados. Aunque los pasillos laterales puedan parecer una ruta segura, ten cuidado, ya que allí las gárgolas podrían acorralarte con sus llamas. Además, lo ideal es cortarle la cola a la primera gárgola para recortar sus ataques a larga distancia.`,
     lore: `
-      Las Gárgolas son criaturas de piedra creadas por los dioses mediante magia para patrullar Anor Londo y otros sitios de gran importancia. 
-      Poseen una piel dura y resistente, pueden escupir fuego o rayos y están equipadas con una alabarda de bronce como arma, junto con un escudo y un casco decorativo.
+      <a href="">Las Gárgolas Campana</a> son criaturas de piedra creadas por los dioses mediante magia para patrullar <a href="">Anor Londo</a> y otros sitios de gran importancia. 
+      Poseen una piel dura y resistente, pueden escupir fuego o rayos y están equipadas con una <a href="">alabarda</a> de bronce como arma, junto con un escudo y un casco decorativo.
       <br><br>
-      Tras el sacrificio del Señor Gwyn para prolongar la Era del Fuego, varias Gárgolas fueron asignadas a la vigilancia de la Campana del Despertar en la Iglesia de los No Muertos en el Burgo de los No Muertos. 
-      Su propósito era servir como prueba para los No Muertos que aspiraban a seguir el destino de Gwyn. Superar este desafío otorgaba acceso a la Fortaleza de Sen, el siguiente obstáculo en su camino.`,
+      Tras el sacrificio del <a href="">Gwyn</a> para prolongar la Era del Fuego, varias Gárgolas fueron asignadas a la vigilancia de la Campana del Despertar en la <a href="">Iglesia de los No Muertos</a> en el <a href="">Burgo de los No Muertos</a>. 
+      Su propósito era servir como prueba para los No Muertos que aspiraban a seguir el destino de <a href="">Gwyn</a>. Superar este desafío otorgaba acceso a la <a href="">Fortaleza de Sen</a>, el siguiente obstáculo en su camino.`,
     curiosities: [
       { 
         description: "La batalla contra las Gárgolas de Campana está inspirada en el enfrentamiento contra los Desolladores de Demon’s Souls." 
@@ -322,7 +322,7 @@ const bossDetails = {
       almas6: 93750
     },
     summoning: "Se puede invocar a Solaire de Astora y a Lautrec de Carim (si fue liberado y hablado en el Santuario del Enlace de Fuego). La señal de Solaire está junto a las escaleras hacia la puerta de niebla, mientras que la de Lautrec se encuentra detrás de un pilar, frente a la de Solaire.",
-    weaknesses:["Fuego"],
+    weaknesses:["Fuego, Electricidad"],
     dropsDetailed: [
       { item: "Humanidad", percentage: "100%" },
       { item: "Hueso de Regreso", percentage: "100%" },
@@ -341,22 +341,22 @@ const bossDetails = {
       { name: "Garganta", description: "El Dragón Boquiabierto agarra al jugador si está demasiado cerca y lo aplasta con sus fauces verticales, causando daño físico masivo." },
     ],
     bestStrategies: `
-              Por ser un dragón, es vulnerable al daño eléctrico. Los ataques a distancia son efectivos, especialmente cuando el Dragón Boquiabierto ejecuta una carga hacia adelante. 
+              Por ser un dragón, es vulnerable al daño de <a href="">Electricidad</a>. Los ataques a distancia son efectivos, especialmente cuando el <a href="">Dragón Boquiabierto</a> ejecuta una carga hacia adelante. 
               Con un buen posicionamiento, bloquear o esquivar no es necesario. Usar armas a dos manos es una excelente opción para maximizar el daño en combate cuerpo a cuerpo.<br> <br>
-              Tras su ataque de carga, el Dragón Boquiabierto queda momentáneamente inmóvil, permitiendo un ataque seguro. La carga siempre sigue a un golpe de estómago, por lo que este movimiento puede usarse como señal para acercarse a su lado o cola y preparar un contraataque. 
-              Atacar la cabeza del Dragón Boquiabierto inflige tres veces más daño que golpear su cuerpo, pero solo es accesible tras un golpe al suelo y antes de su carga. Para acortar la pelea, ataca su cabeza rápidamente tras el impacto, luego aléjate antes de que inicie la carga.<br><br>
-              Cuando su salud cae por debajo del 50%, el Dragón Boquiabierto gana un nuevo ataque: Ácido Corrosivo, que reduce la durabilidad del equipo e incluso puede romperlo. Su animación inicial es similar a la del golpe de estómago, por lo que es crucial no confundirlos. <br><br>
-              La cola del Dragón Boquiabierto puede cortarse, otorgando como recompensa el Gran Hacha Rey Dragón. Además, al perder la cola, su ataque de golpeo trasero tendrá un alcance mucho menor, facilitando el resto del combate. 
-              Para obtener el hacha, es recomendable golpear el centro o el extremo de la cola, ya que atacar la base puede hacer que el dragón muera antes de que la cola reciba suficiente daño. <br><br>
-              Fijar el objetivo dificulta esquivar los ataques del Dragón Boquiabierto, ya que reduce la movilidad del jugador y su capacidad para alejarse rápidamente. Mantente junto a las patas del Dragón Boquiabierto, atacándolo constantemente y moviéndote solo cuando comience a caminar o volar. <br><br>
-              Un fantasma invocado puede apoyar a distancia y distraer al Dragón Boquiabierto desde el balcón, siempre que no cruce la puerta de niebla.`,
+              Tras su ataque de carga, el <a href="">Dragón Boquiabierto</a> queda momentáneamente inmóvil, permitiendo un ataque seguro. La carga siempre sigue a un golpe de estómago, por lo que este movimiento puede usarse como señal para acercarse a su lado o cola y preparar un contraataque. 
+              Atacar la cabeza del <a href="">Dragón Boquiabierto</a> inflige tres veces más daño que golpear su cuerpo, pero solo es accesible tras un golpe al suelo y antes de su carga. Para acortar la pelea, ataca su cabeza rápidamente tras el impacto, luego aléjate antes de que inicie la carga.<br><br>
+              Cuando su salud cae por debajo del 50%, el <a href="">Dragón Boquiabierto</a> gana un nuevo ataque: <a href="">Ácido Corrosivo</a>, que reduce la durabilidad del equipo e incluso puede romperlo. Su animación inicial es similar a la del golpe de estómago, por lo que es crucial no confundirlos. <br><br>
+              La cola del <a href="">Dragón Boquiabierto</a> puede cortarse, otorgando como recompensa el <a href="">Gran Hacha Rey Dragón</a>. Además, al perder la cola, su ataque de golpeo trasero tendrá un alcance mucho menor, facilitando el resto del combate. 
+              Para obtener la <a href=""> Gran Hacha del Rey Dragon</a>, es recomendable golpear el centro o el extremo de la cola, ya que atacar la base puede hacer que el dragón muera antes de que la cola reciba suficiente daño. <br><br>
+              Fijar el objetivo dificulta esquivar los ataques del Dragón Boquiabierto, ya que reduce la movilidad del jugador y su capacidad para alejarse rápidamente. Mantente junto a las patas del <a href="">Dragón Boquiabierto</a>, atacándolo constantemente y moviéndote solo cuando comience a caminar o volar. <br><br>
+              Un fantasma invocado puede apoyar a distancia y distraer al <a href="">Dragón Boquiabierto</a> desde el balcón, siempre que no cruce la puerta de niebla.`,
     lore: `
-      El Dragón Boquiabierto es un descendiente lejano de los Archidragones Primordiales, una especie parcialmente mineral que existió mucho antes de la humanidad. Es el último de su linaje.
+      El <a href="">Dragón Boquiabierto</a> es un descendiente lejano de los <a href="">Archidragones Primordiales</a>, una especie parcialmente mineral que existió mucho antes de la humanidad. Es el último de su linaje.
       <br><br>
-      Tras sobrevivir a la guerra contra los portadores de las Almas de Señor, quedó solo y obligado a luchar por su supervivencia. 
-      Con el tiempo, terminó en las profundidades del Burgo de los No Muertos, en Ciudad Infestada, un lugar tan infestado y temido que incluso los parias de las Profundidades lo evitan. <br><br>
+      Tras sobrevivir a la guerra contra los portadores de las <a href="">Almas de Señor</a>, quedó solo y obligado a luchar por su supervivencia. 
+      Con el tiempo, terminó en las profundidades del <a href="">Burgo de los No Muertos</a>, en <a href="">Ciudad Infestada</a>, un lugar tan infestado y temido que incluso los parias de las <a href="">Profundidades</a> lo evitan. <br><br>
       La oscuridad lo corrompió, transformándolo en una abominación deformada, donde su caja torácica mutó en una gigantesca boca que rezuma ácido. 
-      En su desesperación, devoró la llave de la puerta construida por los habitantes de las Profundidades, quienes la usaban para mantenerse a salvo de la plaga de Blighttown, mientras el dragón intentaba derribarla para resurgir.
+      En su desesperación, devoró la llave de la puerta construida por los habitantes de las <a href="">Profundidades</a>, quienes la usaban para mantenerse a salvo de la plaga de la <a href="">Ciudad Infestada</a>, mientras el dragón intentaba derribarla para resurgir.
     `,
     curiosities: [
       { 
@@ -404,19 +404,19 @@ const bossDetails = {
       { name: "Saltar y Escupir Lava", description: "Quelaag se lanza agresivamente hacia el jugador, liberando múltiples gotas de lava que caen en el área de impacto y causan un daño devastador. Además, en su variante lateral, salta hacia un costado mientras escupe lava, infligiendo un leve daño al impactar." },
     ],
     bestStrategies: `
-              Al entrar en la arena, es fundamental evitar quedar atrapado en la entrada, ya que Quelaag puede embestir o saltar hacia ti. 
+              Al entrar en la arena, es fundamental evitar quedar atrapado en la entrada, ya que <a href="">Quelaag</a> puede embestir o saltar hacia ti. 
               Lo ideal es posicionarse en los laterales frontales, prestando atención a sus señales de ataque, para tener tiempo de contraatacar sin quedar expuesto. <br> <br>
               Sus movimientos están claramente anunciados, lo que facilita esquivar sus cortes y estocadas con tiempo preciso: por ejemplo, rueda hacia la derecha cuando empuñe la espada y ajusta tu posición si detectas que se prepara para usar su oleada de lava. <br><br>
-              Se aconseja equipar armadura y escudos con alta resistencia física y al fuego (por ejemplo, el Escudo del Caballero Negro o el Escudo de Araña) y usar la piromancia Sudor Relámpago para reducir el daño de los charcos de lava. Un arma con al menos 180 de daño base ayuda a bajar su salud con rapidez. 
-              En cuerpo a cuerpo, un arma de ataque vertical, como la Halabarda Gárgola, puede hacerla tambalearse, dejándola vulnerable tras cada golpe. <br><br>
-              Para aquellos que encuentran dificultades al enfrentarse a Quelaag, una estrategia eficaz es transformarse en humano en los pantanos de lo profundo de Ciudad Infestada. Al hacerlo, se activará la invasión de un espectro conocido como Mildred Devorahombres. 
-              Sus ataques, lentos y carentes de la protección de una armadura, la hacen un enemigo sencillo de vencer. Una vez eliminada, su señal de invocación aparecerá frente a la puerta de niebla que conduce a Quelaag.`,
+              Se aconseja equipar armadura y escudos con alta resistencia física y al fuego (por ejemplo, el <a href="">Escudo del Caballero Negro</a> o el <a href="">Escudo de Araña</a>) y usar la piromancia <a href="">Sudor Relámpago</a> para reducir el daño de los charcos de lava. Un arma con al menos 180 de daño base ayuda a bajar su salud con rapidez. 
+              En cuerpo a cuerpo, un arma de ataque vertical, como la <a href="">Alabarda Gárgola</a>, puede hacerla tambalearse, dejándola vulnerable tras cada golpe. <br><br>
+              Para aquellos que encuentran dificultades al enfrentarse a <a href="">Quelaag</a>, una estrategia eficaz es transformarse en humano en los pantanos de lo profundo de <a href="">Ciudad Infestada</a>. Al hacerlo, se activará la invasión de un espectro conocido como <a href="">Mildred Devorahombres</a>. 
+              Sus ataques, lentos y carentes de la protección de una armadura, la hacen un enemigo sencillo de vencer. Una vez eliminada, su señal de invocación aparecerá frente a la puerta de niebla que conduce a <a href="">Quelaag</a>.`,
     lore: `
-      Quelaag es la hermana mayor de la Dama Blanca. Cuando su madre, la Bruja de Izalith, junto con sus otras hermanas, se fusionó con el Lecho del Caos, Quelaag y su hermana huyeron y se convirtieron en medias arañas demoníacas. 
+      <a href="">Quelaag</a> es la hermana mayor de la <a href="">Dama Blanca</a>. Cuando su madre, la <a href="">Bruja de Izalith</a>, junto con sus otras hermanas, se fusionó con el <a href="">Lecho del Caos</a>, <a href="">Quelaag</a> y su hermana huyeron y se convirtieron en medias arañas demoníacas. 
       Aunque conservó su cordura, la mitad inferior de su cuerpo adquirió la forma de una araña infernal.
       <br><br>
-      Ambas se establecieron a las afueras de las Ruinas de los demonios, en una sección de la Ciudad Infestada conocida como el Dominio de Quelaag, donde comenzaron a criar insectos demoníacos ofreciendo Humanidades a la Dama Blanca. 
-      Los habitantes del lugar veneraban a las dos brujas y se ofrecían gustosamente para alojar los huevos de la hermana menor. Sin embargo, estos embarazos debilitaron y cegaron a la Dama Blanca, lo que llevó a Quelaag a convertirse en su protectora y principal cazadora.
+      Ambas se establecieron a las afueras de las <a href="">Ruinas de los Demonios</a>, en una sección de la <a href="">Ciudad Infestada</a> conocida como el <a href="">Dominio de Quelaag</a>, donde comenzaron a criar insectos demoníacos ofreciendo <a href="">Humanidad</a> a la <a href="">Dama Blanca</a>. 
+      Los habitantes del lugar veneraban a las dos brujas y se ofrecían gustosamente para alojar los huevos de la hermana menor. Sin embargo, estos embarazos debilitaron y cegaron a la <a href="">Dama Blanca</a>, lo que llevó a <a href="">Quelaag</a> a convertirse en su protectora y principal cazadora.
     `,
     curiosities: [
       { 
@@ -459,13 +459,13 @@ const bossDetails = {
     ],
     bestStrategies: `
             Esquivar es clave en esta pelea, así que asegúrate de llevar un equipo ligero que te permita rodar rápidamente. 
-            Mantente pegado a la pared al esquivar los ataques de la Mariposa Lunar, ya que esto facilita evitar el daño. Un escudo con alta resistencia mágica ayuda a bloquear las lanzas de energía con poco daño. Una buena opción es el Escudo con Cresta. <br><br>
-            Lanza tus mejores hechizos o piromancias cuando la Mariposa Lunar descanse en la pared. 
+            Mantente pegado a la pared al esquivar los ataques de la <a href="">Mariposa Lunar</a>, ya que esto facilita evitar el daño. Un escudo con alta resistencia mágica ayuda a bloquear las lanzas de energía con poco daño. Una buena opción es el <a href="">Escudo con Cresta</a>. <br><br>
+            Lanza tus mejores hechizos o piromancias cuando la <a href="">Mariposa Lunar</a> descanse en el borde. 
             No es recomendable atacarla mientras vuela, ya que su movimiento constante dificulta acertar los proyectiles. Si eres de combate cercano, sostén tu arma con ambas manos para maximizar el daño.`,
     lore: `
-      La Mariposa de Luz de Luna es una criatura mística cuya alma fue creada por Seath el Descamado. Como resultado, posee un poder cristalino puro y domina la magia de Luz de Luna, ambas características de Seath. Su capacidad para lanzar hechicerías de cristal y energía lunar la convierte en un ser formidable.
+      La <a href="">Mariposa Lunar</a> es una criatura mística cuya alma fue creada por <a href="">Seath el Descamado</a>. Como resultado, posee un poder cristalino puro y domina la magia de Luz de Luna, ambas características de <a href="">Seath</a>. Su capacidad para lanzar hechicerías de cristal y energía lunar la convierte en un ser formidable.
       <br><br>
-      Seath creó varias de estas mariposas, las cuales permanecieron en su Cueva de Cristal, pero una de ellas abandonó el lugar y se estableció en el Jardín de la Raíz Oscura, donde protege su territorio de intrusos. Estas criaturas raras y enigmáticas solo aparecían en las noches de luna llena durante el invierno. 
+      <a href="">Seath</a> creó varias de estas mariposas, las cuales permanecieron en su <a href="">Cueva de Cristal</a>, pero una de ellas abandonó el lugar y se estableció en el <a href="">Jardín Tenebroso</a>, donde protege su territorio de intrusos. Estas criaturas raras y enigmáticas solo aparecían en las noches de luna llena durante el invierno. 
       Su ecología sigue siendo un misterio, ya que nunca se han visto sus larvas, lo que llevó a especulaciones de que fueron creadas a través de la misma magia que impregna sus cuerpos.
     `,
     curiosities: [
@@ -517,15 +517,15 @@ const bossDetails = {
       { name: "Voltereta hacia Atrás", description: "Sif realiza un corte en diagonal antes de impulsarse hacia atrás con un salto. Para evitar el impacto, lo más recomendable es rodar hacia un costado, manteniendo la distancia y evitando quedar vulnerable ante su siguiente ataque." },
     ],
     bestStrategies: `
-            Mantente cerca del lobo, ya que su peligro radica en el alcance de sus ataques. Si te colocas debajo de Sif, muchos de sus golpes fallarán por completo. Aprovecha este momento para asestar varios golpes antes de que se recupere y repite la estrategia. La mejor forma de colocarse bajo ella es esperar su ataque y rodar debajo de sus patas delanteras. 
+            Mantente cerca del lobo, ya que su peligro radica en el alcance de sus ataques. Si te colocas debajo de <a href="">Sif</a>, muchos de sus golpes fallarán por completo. Aprovecha este momento para asestar varios golpes antes de que se recupere y repite la estrategia. La mejor forma de colocarse bajo ella es esperar su ataque y rodar debajo de sus patas delanteras. 
             Fijar el objetivo y moverse en círculos facilita esquivar su ataque giratorio, que siempre inicia por la izquierda. Golpear sus patas repetidamente la volverá más lenta, limitando su movilidad.<br><br>
-            Si no tienes un escudo con alta estabilidad, el doble giro de Sif puede romper tu guardia. Una estrategia efectiva es bloquear el primer golpe y rodar en la dirección del segundo. El Escudo de Águila, ubicado después de la hoguera superior de Ciudad Infestada, es una excelente opción para esta pelea. <br><br>
-            Cuando su salud esté al mínimo, Sif cojeará y sus ataques serán más lentos. Aunque se ha rumoreado que romper su espada en este punto la haría huir, no existe tal mecánica. <br><br>
+            Si no tienes un escudo con alta estabilidad, el doble giro de Sif puede romper tu guardia. Una estrategia efectiva es bloquear el primer golpe y rodar en la dirección del segundo. El <a href="">Escudo de Águila</a>, ubicado después de la hoguera superior de <a href="">Ciudad Infestada</a>, es una excelente opción para esta pelea. <br><br>
+            Cuando su salud esté al mínimo, <a href="">Sif</a> cojeará y sus ataques serán más lentos. Aunque se ha rumoreado que romper su espada en este punto la haría huir, no existe tal mecánica. <br><br>
             Esta pelea puede ser un desafío extremo o sorprendentemente sencilla, dependiendo del enfoque que tomes. Si juegas como mago, mantén siempre el escudo en alto cuando no estés lanzando hechizos y procura retroceder lo suficiente para evitar la mayoría de sus ataques, ya que aunque su espada tiene gran alcance, mantener la distancia reducirá el peligro. 
-            Es recomendable evitar las Grandes Flechas del Alma Pesadas, ya que su tiempo de lanzamiento es demasiado largo, y en su lugar usar Lanzas del Alma o Grandes Flechas del Alma, que son más rápidas y efectivas. Gestionar bien la resistencia y la curación es clave, ya que beber Estus en el momento equivocado puede ser fatal; esta pelea es una prueba de paciencia, no de rapidez. Aprovecha los momentos de vulnerabilidad de Sif, pero evita quedarte debajo de ella; en su lugar, incítala a atacar, esquiva y lanza hechizos cuando haya una apertura. Si se acerca demasiado, Combustión puede ser una excelente opción para castigarla.`,
+            Es recomendable evitar las <a href="">Grandes Flechas del Alma Pesadas</a>, ya que su tiempo de lanzamiento es demasiado largo, y en su lugar usar <a href="">Lanzas del Alma</a> o <a href="">Grandes Flechas del Alma</a>, que son más rápidas y efectivas. Gestionar bien la resistencia y la curación es clave, ya que beber Estus en el momento equivocado puede ser fatal; esta pelea es una prueba de paciencia, no de rapidez. Aprovecha los momentos de vulnerabilidad de Sif, pero evita quedarte debajo de ella; en su lugar, incítala a atacar, esquiva y lanza hechizos cuando haya una apertura. Si se acerca demasiado, Combustión puede ser una excelente opción para castigarla.`,
     lore: `
-      Sif, el leal compañero de Artorias, el Caminante del Abismo, luchó junto a él en su misión para contener la expansión del Abismo en Oolacile. Sin embargo, al verse superados por la corrupción, Artorias sacrificó su escudo para crear una barrera mágica que protegiera a Sif, evitando que sucumbiera a la oscuridad.
-      Tras la caída de su maestro, Sif asumió el papel de guardián de su tumba en el Jardín Tenebroso, impidiendo que otros aventureros siguieran el mismo trágico destino de Artorias.
+      <a href="">Sif</a>, el leal compañero de <a href="">Artorias, el Caminante del Abismo</a>, luchó junto a él en su misión para contener la expansión del <a href="">Abismo en Oolacile</a>. Sin embargo, al verse superados por la corrupción, <a href="">Artorias</a> sacrificó su escudo para crear una barrera mágica que protegiera a <a href="">Sif</a>, evitando que sucumbiera a la oscuridad.
+      Tras la caída de su maestro, <a href="">Sif</a> asumió el papel de guardián de su tumba en el <a href="">Jardín Tenebroso</a>, impidiendo que otros aventureros siguieran el mismo trágico destino de <a href="">Artorias</a>.
     `,
     curiosities: [
       { 
@@ -563,7 +563,7 @@ const bossDetails = {
     summoning: "Se puede invocar al Fantasma Blanco y Tarkus Hierro Negro, para que asista en la batalla. Su señal de invocación está al otro lado del puente, a la derecha de la puerta de niebla.",
     weaknesses:["Magia"],
     dropsDetailed: [
-      { item: "Núcleo del Golem de Hierro", percentage: "100%" },
+      { item: "Núcleo del Gólem de Hierro", percentage: "100%" },
     ],
     moves: [
       { name: "Hoja de Viento", description: "A distancia, el Gólem de Hierro carga su arma y lanza un proyectil de viento cortante hacia el jugador." },
@@ -576,18 +576,18 @@ const bossDetails = {
       { name: "Barra Lateral", description: "El Gólem de Hierro balancea su hacha verticalmente hacia el suelo, impactando cerca de sus piernas. El ataque tiene un amplio alcance, lo que dificulta atravesarlo." },
     ],
     bestStrategies: `
-            Derrotar al gigante que lanza bombas incendiarias, ubicado en la cima de la fortaleza (accesible por las escaleras opuestas a la niebla del jefe), evitará que su ataque de fuego interfiera en el combate contra el Gólem de Hierro. Es fundamental prestar atención al entorno, ya que se corre el riesgo de caer de los bordes de la plataforma. 
-            La pasarela principal, que conecta la entrada con el Gólem, es generalmente más segura que las laterales, y en sus extremos diagonales existen pequeñas zonas protegidas ideales para curarse, pues bloquean la onda de choque del enemigo.<br><br>
-            Al atravesar la puerta de niebla, el Gólem lanza una onda expansiva con su hacha; este ataque puede esquivarse o bloquearse posicionándose detrás de una barrera. Su patrón de ataque es lento y predecible, siendo su agarre a corta distancia el más peligroso, aunque es posible esquivarlo rodando. 
-            Durante un pisotón, lo mejor es moverse para atacar la pierna contraria, y si se golpea repetidamente una de sus piernas, el Gólem perderá el equilibrio y quedará indefenso durante unos segundos; si tropieza cerca del borde, puede caer fuera de la arena sin que su núcleo se pierda. Debido al movimiento de la cámara al enfocar su rostro y al riesgo de caer, no se recomienda fijar el objetivo durante el combate. <br><br>
-            Hechiceros y personajes a distancia pueden posicionarse en zonas seguras donde el Gólem se vea forzado a emplear ataques cuerpo a cuerpo, quedando estos fuera de alcance. Potenciar armas contundentes (como martillos, garrotes o gran martillos) aplicándoles resina de pino dorado o una Hoja de Luz Solar resulta muy efectivo, ya que el Gólem es vulnerable a golpes contundentes y al daño de relámpago. Sostener el arma a dos manos aumenta el daño y facilita hacerlo tambalear y derribar. 
-            Además, el fantasma invocable Tarkus Hierro Negro es lo suficientemente fuerte como para derrotar al Gólem por sí solo, y los fantasmas invocados pueden atacar desde los puentes laterales con arcos, aunque esta estrategia requiere más tiempo. <br><br>
+            Derrotar al <a href="">Gigante</a> que lanza <a href="">Bombas Incendiarias</a>, ubicado en la cima de la <a href="">Fortaleza de Sen</a> (accesible por las escaleras opuestas a la niebla del jefe), evitará que su ataque de fuego interfiera en el combate contra el <a href="">Gólem de Hierro</a>. Es fundamental prestar atención al entorno, ya que se corre el riesgo de caer de los bordes de la plataforma. 
+            La pasarela principal, que conecta la entrada con el <a href="">Gólem de Hierro</a>, es generalmente más segura que las laterales, y en sus extremos diagonales existen pequeñas zonas protegidas ideales para curarse, pues bloquean la onda de choque del enemigo.<br><br>
+            Al atravesar la puerta de niebla, el <a href="">Gólem de Hierro</a> lanza una onda expansiva con su hacha; este ataque puede esquivarse o bloquearse posicionándose detrás de una barrera. Su patrón de ataque es lento y predecible, siendo su agarre a corta distancia el más peligroso, aunque es posible esquivarlo rodando. 
+            Durante un pisotón, lo mejor es moverse para atacar la pierna contraria, y si se golpea repetidamente una de sus piernas, el <a href="">Gólem de Hierro</a> perderá el equilibrio y quedará indefenso durante unos segundos; si tropieza cerca del borde, puede caer fuera de la arena sin que su núcleo se pierda. Debido al movimiento de la cámara al enfocar su rostro y al riesgo de caer, no se recomienda fijar el objetivo durante el combate. <br><br>
+            <a href="">Hechiceros</a> y personajes a distancia pueden posicionarse en zonas seguras donde el <a href="">Gólem de Hierro</a> se vea forzado a emplear ataques cuerpo a cuerpo, quedando estos fuera de alcance. Potenciar armas contundentes (como martillos, garrotes o gran martillos) aplicándoles <a href="">Resina de Pino Dorado</a> o una <a href="">Espada de Luz Solar</a> resulta muy efectivo, ya que el <a href="">Gólem de Hierro</a> es vulnerable a golpes contundentes y al daño de relámpago. Sostener el arma a dos manos aumenta el daño y facilita hacerlo tambalear y derribar. 
+            Además, el fantasma invocable <a href="">Tarkus Hierro Negro</a> es lo suficientemente fuerte como para derrotar al <a href="">Gólem de Hierro</a> por sí solo, y los fantasmas invocados pueden atacar desde los puentes laterales con arcos, aunque esta estrategia requiere más tiempo. <br><br>
             Una estrategia efectiva consiste en rodar bajo las piernas del Gólem tras cada ataque y golpear sus talones, aprovechando armas de amplio alcance (como las alabardas) para impactar ambas piernas y facilitar que pierda el equilibrio. Todos los ataques del Gólem pueden esquivarse o evitarse caminando, por lo que una adecuada sincronización y posicionamiento resultan claves para dominar el combate.`,
     lore: `
-      El Gólem de Hierro fue creado por los Dioses como guardián de Anor Londo. Su cuerpo es un bloque macizo de hierro, formando una armadura de enorme peso, y está equipado con un hacha pesada capaz de desatar ráfagas de viento cortante. Este constructo cobra vida gracias a un núcleo místico, forjado por los dioses al infundir el hueso de un Archidragón derrotado con el poder de las almas.
+      El <a href="">Gólem de Hierro</a> fue creado por los Dioses como guardián de <a href="">Anor Londo</a>. Su cuerpo es un bloque macizo de hierro, formando una armadura de enorme peso, y está equipado con un hacha pesada capaz de desatar <a href="">Hoja de Viento</a>. Este constructo cobra vida gracias a un núcleo místico, forjado por los dioses al infundir el hueso de un <a href="">Archidragón</a> derrotado con el poder de las almas.
       <br><br>
-      Tras el sacrificio de Lord Gwyn para prolongar la Era del Fuego, el Gólem de Hierro fue colocado como el último desafío de la Fortaleza de Sen. Los No Muertos que aspiraban a seguir los pasos de Gwyn debían superar múltiples pruebas antes de obtener la Vasija del Señor y buscar almas poderosas. <br><br>
-      Hacer sonar las Campanas del Despertar era solo el primer obstáculo; quienes lograban avanzar eran puestos a prueba en la Fortaleza de Sen, donde el Gólem de Hierro representaba la última barrera para acceder a Anor Londo, la ciudad de los dioses. A lo largo de los siglos, este constructo cumplió su propósito, eliminando a innumerables héroes en su intento de alcanzar la legendaria ciudad.
+      Tras el sacrificio de <a href="">Lord Gwyn</a> para prolongar la Era del Fuego, el <a href="">Gólem de Hierro</a> fue colocado como el último desafío de la <a href="">Fortaleza de Sen</a>. Los <a href="">No Muertos</a> que aspiraban a seguir los pasos de <a href="">Gwyn</a> debían superar múltiples pruebas antes de obtener la <a href="">Vasija del Señor</a> y buscar almas poderosas. <br><br>
+      Hacer sonar las Campanas del Despertar era solo el primer obstáculo; quienes lograban avanzar eran puestos a prueba en la <a href="">Fortaleza de Sen</a>, donde el <a href="">Gólem de Hierro</a> representaba la última barrera para acceder a <a href="">Anor Londo</a>, la ciudad de los dioses. A lo largo de los siglos, este constructo cumplió su propósito, eliminando a innumerables héroes en su intento de alcanzar la legendaria ciudad.
     `,
     curiosities: [
       { 
@@ -629,23 +629,23 @@ const bossDetails = {
       { name: "Lanzamiento de Esfera", description: "Una vez más, tras cargar su catalizador, Gwyndolin expulsa una gigantesca esfera mágica que se desplaza a gran velocidad. Esta amenaza puede ser esquivada rodando hacia los lados o directamente por debajo, o bloqueada con un escudo mágico de calidad. Sin embargo, puesto que la esfera atraviesa las columnas, esconderse detrás de ellas no resulta una estrategia eficaz." },
     ],
     bestStrategies: `
-            La batalla contra Gwyndolin se desarrolla en un corredor interminable. Aunque no resulta excesivamente difícil para quienes dominan la esquiva, el reto principal es alcanzarlo, ya que se teletransporta al detectar la cercanía del jugador. Equipar el Anillo de Niebla puede ampliar el margen de tiempo para atacar antes de que se retire, siendo fundamental para coordinar el asalto.<br><br>
-            La clave está en aprovechar que tanto la lluvia de flechas como la esfera no tienen seguimiento, lo que permite evitarlas corriendo en diagonal. Una estrategia efectiva es avanzar de columna en columna hasta quedar a dos pilares de Gwyndolin y esperar a que concluya su Lluvia de Flechas (que puede incluir dos a cuatro oleadas) para atacar en su breve ventana de vulnerabilidad. 
+            La batalla contra <a href="">Gwyndolin</a> se desarrolla en un corredor interminable. Aunque no resulta excesivamente difícil para quienes dominan la esquiva, el reto principal es alcanzarlo, ya que se teletransporta al detectar la cercanía del jugador. Equipar el <a href="">Anillo de Niebla</a> puede ampliar el margen de tiempo para atacar antes de que se retire, siendo fundamental para coordinar el asalto.<br><br>
+            La clave está en aprovechar que tanto la lluvia de flechas como la esfera no tienen seguimiento, lo que permite evitarlas corriendo en diagonal. Una estrategia efectiva es avanzar de columna en columna hasta quedar a dos pilares de <a href="">Gwyndolin</a> y esperar a que concluya su <a href="">Disparo de Flechas</a> (que puede incluir dos a cuatro oleadas) para atacar en su breve ventana de vulnerabilidad. 
             Además, es posible dañarlo durante su animación de teletransporte o justo al terminarla. <br><br>
-            Como alternativa, tras el primer teletransporte del jefe al ingresar a la cripta, el jugador puede acercarse hasta quedar justo fuera de su rango de agresión. Equipando el Anillo del Halcón y utilizando el Gran Arco Asesino de Dragones, se puede infligir daño considerable desde la distancia sin riesgo de recibir represalias directas.`,
+            Como alternativa, tras el primer teletransporte del jefe al ingresar a la cripta, el jugador puede acercarse hasta quedar justo fuera de su rango de agresión. Equipando el <a href="">Anillo del Halcón</a> y utilizando el <a href="">Gran Arco Asesino de Dragones</a>, se puede infligir daño considerable desde la distancia sin riesgo de recibir represalias directas.`,
     lore: `
-      Gwyndolin es el hijo menor de Gwyn, Señor de la Luz Solar, y uno de los dioses que habitó Anor Londo durante la Edad del Fuego, si bien su legitimidad radica únicamente en su linaje. 
+      <a href="">Gwyndolin</a> es el hijo menor de <a href="">Gwyn, Señor de la Luz Solar</a>, y uno de los dioses que habitó <a href="">Anor Londo</a> durante la Edad del Fuego, si bien su legitimidad radica únicamente en su linaje. 
       Adorado como el "Dios de la Luna Oscura" y ostentando el título de "Dios del Sol Oscuro", nació imbuido de un poderoso don lunar, aunque presentaba un aspecto débil y repulsivo, marcado especialmente por las serpientes en su parte inferior.
       <br><br>
-      Debido a su afinidad con la magia lunar, Gwyndolin fue criado con rasgos femeninos: Gwyn le impuso vestimentas de mujer y le otorgó un anillo mágico que inducía un comportamiento delicado y efímero, asemejándolo a una diosa oscura. 
+      Debido a su afinidad con la magia lunar, <a href="">Gwyndolin</a> fue criado con rasgos femeninos: <a href="">Gwyn</a> le impuso vestimentas de mujer y le otorgó un anillo mágico que inducía un comportamiento delicado y efímero, asemejándolo a una diosa oscura. 
       A pesar de las adversidades y de haber aceptado una imagen considerada frágil por los otros dioses, desarrolló una profunda admiración por su padre y aspiró a emular su grandeza, llegando a portar una corona adornada con un sol impregnado de su magia lunar. <br><br>
-      Con el tiempo, Gwyndolin se consolidó como un poderoso hechicero. Empuñó un arco dorado imbuido de magia capaz de disparar flechas de luz lunar y utilizó un catalizador que canalizaba la fe del usuario, demostrando su gran dominio en las artes arcanas. 
-      Su figura trascendió Anor Londo, siendo representada en múltiples estatuas en Oolacile, donde incluso se erigió un colosal anfiteatro para rituales de combate, evidenciando su influencia en los estudios de la hechicería. <br><br>
-      Tras la caída del primogénito de Gwyn destituido por aliarse con los dragones y la posterior partida de casi todos los dioses, Gwyndolin quedó como el único representante de la divinidad en Anor Londo. 
-      Consciente de su apariencia y de no ser apto para reinar abiertamente, ideó una astuta estrategia: creó la ilusión de su hermana Gwynevere, cuya imagen venerada le permitió gobernar el reino y liderar a los Caballeros de Plata sin pretender el trono para sí mismo. Asimismo, colaboró con Frampt el Buscarreyes para mantener viva la llama primordial y perpetuar la Edad del Fuego, guiando a los elegidos a través de desafíos sagrados. <br><br>
-      No permaneciendo inactivo, Gwyndolin fundó el pacto de la Espada de la Luna Oscura, reclutando a un selecto grupo de caballeros cuya misión era cazar y castigar a quienes cometieran pecados contra los dioses. Estos guerreros, equipados con los Orbes del Ojo Azul, podían invadir el tiempo y el espacio para ejecutar la justicia divina. 
-      En alianza con Velka, Diosa del Pecado, establecieron un sistema en el que los infractores eran marcados en el Libro de los Culpables para que, en el futuro, enfrentaran la furia de los Blades de la Luna Oscura. Los seguidores de Gwyndolin, como prueba de su deber cumplido, recolectaban una oreja de cada pecador derrotado, recibiendo a cambio anillos, talismanes y el conocimiento para forjar espadas imbuidas con la luz oscura. <br><br>
-      Gwyndolin se mantuvo oculto en el mausoleo vacío de su padre, administrando Anor Londo y llevando a cabo la voluntad de Gwyn. Así, a través de su maestría en la hechicería, el uso de ilusiones y la instauración de pactos divinos, consolidó un legado que perdura en la memoria de aquellos que aún veneran la Edad del Fuego, combinando el poder del sol con la magia enigmática de la luna oscura.
+      Con el tiempo, <a href="">Gwyndolin</a> se consolidó como un poderoso hechicero. Empuñó un arco dorado imbuido de magia capaz de disparar flechas de luz lunar y utilizó un catalizador que canalizaba la fe del usuario, demostrando su gran dominio en las artes arcanas. 
+      Su figura trascendió <a href="">Anor Londo</a>, siendo representada en múltiples estatuas en <a href="">Oolacile</a>, donde incluso se erigió un colosal anfiteatro para rituales de combate, evidenciando su influencia en los estudios de la hechicería. <br><br>
+      Tras la caída del primogénito de <a href="">Gwyn</a> destituido por aliarse con los dragones y la posterior partida de casi todos los dioses, <a href="">Gwyndolin</a> quedó como el único representante de la divinidad en <a href="">Anor Londo</a>. 
+      Consciente de su apariencia y de no ser apto para reinar abiertamente, ideó una astuta estrategia: creó la ilusión de su hermana <a href="">Gwynevere</a>, cuya imagen venerada le permitió gobernar el reino y liderar a los <a href="">Caballeros de Plata</a> sin pretender el trono para sí mismo. Asimismo, colaboró con <a href="">Frampt el Buscarreyes</a> para mantener viva la llama primordial y perpetuar la Edad del Fuego, guiando a los elegidos a través de desafíos sagrados. <br><br>
+      No permaneciendo inactivo, <a href="">Gwyndolin</a> fundó el Pacto de la <a href="">Espada de la Luna Oscura</a>, reclutando a un selecto grupo de caballeros cuya misión era cazar y castigar a quienes cometieran pecados contra los dioses. Estos guerreros, equipados con los Orbes del Ojo Azul, podían invadir el tiempo y el espacio para ejecutar la justicia divina. 
+      En alianza con <a href="">Velka, Diosa del Pecado</a>, establecieron un sistema en el que los infractores eran marcados en el Libro de los Culpables para que, en el futuro, enfrentaran la furia de las <a href="">Espadas de la Luna Oscura</a>. Los seguidores de <a href="">Gwyndolin</a>, como prueba de su deber cumplido, recolectaban una oreja de cada pecador derrotado, recibiendo a cambio anillos, talismanes y el conocimiento para forjar espadas imbuidas con la luz oscura. <br><br>
+      <a href="">Gwyndolin</a> se mantuvo oculto en el mausoleo vacío de su padre, administrando <a href="">Anor Londo</a> y llevando a cabo la voluntad de <a href="">Gwyn</a>. Así, a través de su maestría en la hechicería, el uso de ilusiones y la instauración de pactos divinos, consolidó un legado que perdura en la memoria de aquellos que aún veneran la Edad del Fuego, combinando el poder del sol con la magia enigmática de la luna oscura.
     `,
     curiosities: [
       { 
@@ -798,19 +798,19 @@ const bossDetails = {
       ]
     },
     bestStrategies: `
-            El jugador debe luchar contra ambos jefes simultáneamente. Al derrotar a uno, el otro absorberá su poder, recuperando toda su salud y aumentando su vida, daño y resistencia. Además, Ornstein crecerá en tamaño si sobrevive, mientras que Smough será imbuido con electricidad. Invocar a Solaire facilita el combate al permitir dividir la atención de los jefes. 
+            El jugador debe luchar contra ambos jefes simultáneamente. Al derrotar a uno, el otro absorberá su poder, recuperando toda su salud y aumentando su vida, daño y resistencia. Además, <a href="">Ornstein</a> crecerá en tamaño si sobrevive, mientras que <a href="">Smough</a> será imbuido con electricidad. Invocar a Solaire facilita el combate al permitir dividir la atención de los jefes. 
             Sin embargo, no es útil dañar a ambos en la primera fase, ya que el sobreviviente recuperará toda su salud en la segunda. La mejor estrategia es que el fantasma distraiga a un jefe mientras el jugador se enfoca en derrotar al otro. <br><br>
-            Al luchar en solitario, una estrategia segura es moverse alrededor del perímetro de la sala, usando los pilares para bloquear los ataques de carga. Esto suele llevar a que Ornstein sea derrotado primero, ya que su velocidad le permite alcanzar al jugador antes que Smough, quien quedará rezagado intentando rodear los obstáculos.<br><br>
-            El estilo de combate de Ornstein se basa en ataques rápidos y estocadas, por lo que esquivar hacia los lados es más efectivo que rodar hacia atrás. Su velocidad y agilidad lo hacen difícil de golpear, y su capacidad para lanzar rayos a distancia lo convierte en una amenaza en cualquier rango. Smough es el más resistente de los dos y su martillo inflige un daño devastador si conecta. Como su hitbox se centra en la cabeza del martillo, lo ideal es esquivar hacia él o alejarse. Sin embargo, hay que estar atento a su ataque de carga, que puede ser letal si el jugador se mantiene fuera de su alcance cuerpo a cuerpo. Derrotar primero a Ornstein facilita el combate, ya que Smough es más predecible y tiene más debilidades en la segunda fase. <br><br>
+            Al luchar en solitario, una estrategia segura es moverse alrededor del perímetro de la sala, usando los pilares para bloquear los ataques de carga. Esto suele llevar a que Ornstein sea derrotado primero, ya que su velocidad le permite alcanzar al jugador antes que <a href="">Smough</a>, quien quedará rezagado intentando rodear los obstáculos.<br><br>
+            El estilo de combate de <a href="">Ornstein</a> se basa en ataques rápidos y estocadas, por lo que esquivar hacia los lados es más efectivo que rodar hacia atrás. Su velocidad y agilidad lo hacen difícil de golpear, y su capacidad para lanzar rayos a distancia lo convierte en una amenaza en cualquier rango. <a href="">Smough</a> es el más resistente de los dos y su martillo inflige un daño devastador si conecta. Como su hitbox se centra en la cabeza del martillo, lo ideal es esquivar hacia él o alejarse. Sin embargo, hay que estar atento a su ataque de carga, que puede ser letal si el jugador se mantiene fuera de su alcance cuerpo a cuerpo. Derrotar primero a <a href="">Ornstein</a> facilita el combate, ya que <a href="">Smough</a> es más predecible y tiene más debilidades en la segunda fase. <br><br>
             Los personajes cuerpo a cuerpo pueden aprovechar armas de gran alcance, como lanzas, alabardas o espadas con estocadas rápidas, para atacar a los jefes cerca de los pilares. Sin embargo, deben tener precaución, ya que ambos jefes pueden ejecutar ataques que atraviesan los obstáculos. Los personajes a distancia pueden usar los pilares para manejar los movimientos de los jefes, pero deben tener en cuenta que no todos tienen la misma altura. Algunos bloquearán proyectiles, mientras que otros permitirán que los ataques los atraviesen. <br><br>
-            Segunda Fase (Ornstein): Si Smough es el primero en caer, Ornstein crecerá en tamaño, aumentará su daño y obtendrá nuevos ataques. La mejor estrategia es mantenerse debajo de él, atacando entre sus piernas y siguiéndolo cuando se aleje. Al igual que Smough, al saltar generará una explosión de rayos, por lo que hay que alejarse rápidamente. También puede empalar al jugador con su lanza y causar una explosión devastadora; este ataque debe bloquearse o esquivarse para evitar un daño masivo. <br><br>
-            Segunda Fase (Smough): Si Ornstein cae primero, Smough lo aplastará con su martillo, ganando poder eléctrico. La mejor estrategia es usar los pilares como cobertura, atacar después de que realice un movimiento y mantenerse alerta. Cuando salte, aléjate con el escudo en alto para reducir el impacto de la explosión de rayos.`,
+            Segunda Fase (Ornstein): Si <a href="">Smough</a> es el primero en caer, <a href="">Ornstein</a> crecerá en tamaño, aumentará su daño y obtendrá nuevos ataques. La mejor estrategia es mantenerse debajo de él, atacando entre sus piernas y siguiéndolo cuando se aleje. Al igual que Smough, al saltar generará una explosión de rayos, por lo que hay que alejarse rápidamente. También puede empalar al jugador con su lanza y causar una explosión devastadora; este ataque debe bloquearse o esquivarse para evitar un daño masivo. <br><br>
+            Segunda Fase (Smough): Si <a href="">Ornstein</a> cae primero, <a href="">Smough</a> lo aplastará con su martillo, ganando poder eléctrico. La mejor estrategia es usar los pilares como cobertura, atacar después de que realice un movimiento y mantenerse alerta. Cuando salte, aléjate con el escudo en alto para reducir el impacto de la explosión de rayos.`,
     lore: `
-      Ornstein, capitán de los Cuatro Caballeros de Gwyn, luchó junto a Artorias, Ciaran y Gough como un cazador de dragones honorario. Empuñaba la Lanza Matadragones, inspirada en el arma del Primogénito de Gwyn, y dominaba el poder del rayo. Se cree que permaneció en Anor Londo junto a Smough para proteger la catedral tras la partida de los dioses.
+      <a href="">Ornstein</a>, capitán de los Cuatro Caballeros de <a href="">Gwyn</a>, luchó junto a <a href="">Artorias</a>, <a href="">Ciaran</a> y <a href="">Gough</a> como un cazador de dragones honorario. Empuñaba la <a href="">Lanza Matadragones</a>, inspirada en el arma del Primogénito de <a href="">Gwyn</a>, y dominaba el poder del rayo. Se cree que permaneció en <a href="">Anor Londo</a> junto a <a href="">Smough</a> para proteger la catedral tras la partida de los dioses.
       <br><br>
-      Sin embargo, existen indicios de que su presencia en Anor Londo podría ser una ilusión, al igual que Gwynevere y la luz de la ciudad, todo mantenido por Gwyndolin. Su aparición en la Torre de la Llama de Heide sugiere que podría haber huido con Gwynevere. Además, la presencia de su armadura en el Pico del Archidragón insinúa que siguió al Primogénito de Gwyn tras su traición. Algunas teorías sugieren incluso que Ornstein abandonó su armadura y cuerpo para convertirse en un dragón, reflejado en el Rey Sin Nombre, quien, al igual que Ornstein, absorbe el poder del rayo a través de su vínculo con los dragones. 
+      Sin embargo, existen indicios de que su presencia en <a href="">Anor Londo</a> podría ser una ilusión, al igual que Gwynevere y la luz de la ciudad, todo mantenido por <a href="">Gwyndolin</a>. Su aparición en la Torre de la Llama de Heide sugiere que podría haber huido con <a href="">Gwynevere</a>. Además, la presencia de su armadura en el Pico del Archidragón insinúa que siguió al Primogénito de <a href="">Gwyn</a> tras su traición. Algunas teorías sugieren incluso que Ornstein abandonó su armadura y cuerpo para convertirse en un dragón, reflejado en el Rey Sin Nombre, quien, al igual que Ornstein, absorbe el poder del rayo a través de su vínculo con los dragones. 
       <br><br>
-      Smough, el verdugo de la familia real de Anor Londo, aspiraba a convertirse en un caballero de Gwyn. Sin embargo, su brutal entusiasmo lo llevó a devorar los huesos de sus víctimas, lo que provocó el rechazo de la realeza y le impidió alcanzar dicho rango. Tras la huida de los dioses de Anor Londo, continuó protegiendo la ilusión de Gwynevere. No está claro si su lealtad era hacia Gwyndolin o si él mismo fue engañado por la falsa luz del sol que envolvía la ciudad. 
+      <a href="">Smough</a>, el verdugo de la familia real de <a href="">Anor Londo</a>, aspiraba a convertirse en un caballero de <a href="">Gwyn</a>. Sin embargo, su brutal entusiasmo lo llevó a devorar los huesos de sus víctimas, lo que provocó el rechazo de la realeza y le impidió alcanzar dicho rango. Tras la huida de los dioses de <a href="">Anor Londo</a>, continuó protegiendo la ilusión de <a href="">Gwynevere</a>. No está claro si su lealtad era hacia <a href="">Gwyndolin</a> o si él mismo fue engañado por la falsa luz del sol que envolvía la ciudad. 
     `,
     curiosities: [
       { 
@@ -2523,4 +2523,4 @@ addCardClickListeners();
 
 // Inicializa la sección por defecto
 updateContent("jefes");
-}());
+}(();
