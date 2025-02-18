@@ -27,21 +27,22 @@ const bossDetails = {
       { name: "Golpe de trasero", description: "El demonio se eleva, para despues caer, causando daño masivo alrededor suyo al impacto." },
       { name: "Impulso del martillo", description: "Cuando el jugador este defrente del demonio, este lanzara un ataque de corto rango imposible de bloquear." },
       { name: "Golpe de martillo", description: "Un barrido horizontal amplio con el martillo, es facil de evitar debido a su deficiente seguimiento." },
-      { name: "Retroceso del martillo", description: "Cuando el jugador este a su derecha, hara una balanceo de retroceso, puede esquivarse si se rueda en el ulitmo momento." },
+      { name: "Retroceso del martillo", description: "Cuando el jugador este a su derecha, hara una balanceo de retroceso, puede esquivarse si se rueda en el ultimo momento." },
       { name: "Barrido lateral del martillo", description: "Misma idea del retroceo del martillo, pero se activa cuando el jugador este a su izquierda." },
       { name: "Martillazo", description: "Un golpe descendente con gran alcance, abarca una zona amplia, se puede esquiva con facilidad." },
       { name: "Martillazo saltante", description: "Cuando el jugador este lejos, el demonio vuela lentamente para luego dejar caer un golpe devastador, debido a su movimiento es facil de esquivar." },
       { name: "Doble balanceo del martillo", description: "Una secuencia de dos balanceos seguidos, tiene un movimiento facil de predecir, pero pueden ir seguidos de un martillazo adicional." },
     ],
     bestStrategies: `
-              En caso quieras el martillo, se necesitaría matarlo la primera vez que lo ves; 
-              si no se puede conseguir, le puedes intercambiar un Saco a Snuggly el Cuervo.<br> <br>
+    
+              El primer enfrentamiento con el Demonio del Refugio es opcional, y para aquellos que inician su primera partida, se recomienda encarecidamente evitar el combate saliendo de la sala. Sin embargo, si el jugador ha recibido las bombas de fuego como obsequio inicial, estas pueden emplearse para derrotar al demonio de forma rápida.
               Para el segundo encuentro, una vez atravesada la niebla, equípate el arma a dos manos y salta de la plataforma, 
               atacando para hacerle mucho daño.
               El demonio es lento y predecible. Lo ideal es rodear al jefe y atacarlo después de que haya ejecutado alguno de sus ataques lentos.
-              Si tienes dificultad para quedarte cerca de él, siempre puedes optar por usar piromancia o magia.`,
+              Si tienes dificultad para quedarte cerca de él, siempre puedes optar por usar piromancia o magia.
+              `,
     lore: `
-      El Demonio del Refugio es un demonio menor que emergió del Lecho del Caos, la entidad que apareció tras el intento de la Bruja de Izalith de generar un poder similar a la Primera Llama utilizando su Alma de Señor. Dicho experimento tuvo éxito, dando lugar a la Llama del Caos, mientras que Izalith y su poderosa alma se convirtieron en el semillero de una nueva forma de vida: la madre y origen de todos los demonios.
+      <a href="">El Demonio del Refugio</a> es un demonio menor que emergió del Lecho del Caos, la entidad que apareció tras el intento de la Bruja de Izalith de generar un poder similar a la Primera Llama utilizando su Alma de Señor. Dicho experimento tuvo éxito, dando lugar a la Llama del Caos, mientras que Izalith y su poderosa alma se convirtieron en el semillero de una nueva forma de vida: la madre y origen de todos los demonios.
       <br><br>
       Tras su nacimiento, el Demonio del Refugio sobrevivió a la guerra librada por los Caballeros Plateados de Gwyn, Señor de la Luz Solar, contra su propia especie, y logró escapar de las ruinas de Izalith Perdida llevándose consigo su imponente Gran Martillo Demoníaco, forjado a partir de arboledas de piedra.
       <br><br>
@@ -74,7 +75,7 @@ const bossDetails = {
       almas3: 44000,
       almas4: 45600,
       almas5: 47600,
-      almas6: 50000
+      almas6: 50000,
     },
     summoning: "No puedes invocar a ningún NPC para esta batalla.",
     weaknesses:["Sangrado", "Armas de Caballero Negro"],
@@ -109,6 +110,9 @@ const bossDetails = {
     curiosities: [
       { 
         description: "El Demonio Salvaje utiliza la misma pieza musical que el Golem de Hierro." 
+      },
+      { 
+        description: "En caso quieras el martillo, se necesitaría matarlo la primera vez que lo ves; si no se puede conseguir, le puedes intercambiar un Saco a Snuggly el Cuervo." 
       },
       { 
         description: "Comparte su apariencia con el Demonio del Refugio y el Sabio del Fuego Demoniaco. Sin embargo, se asemeja más a este último, ya que ambos tienen el mismo patrón de movimientos, diferenciándose únicamente por el fuego que rodea al Sabio." 
