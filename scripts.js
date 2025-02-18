@@ -34,15 +34,14 @@ const bossDetails = {
       { name: "Doble balanceo del martillo", description: "Una secuencia de dos balanceos seguidos, tiene un movimiento facil de predecir, pero pueden ir seguidos de un martillazo adicional." },
     ],
     bestStrategies: `
-    
-              El primer enfrentamiento con el Demonio del Refugio es opcional, y para aquellos que inician su primera partida, se recomienda encarecidamente evitar el combate saliendo de la sala. Sin embargo, si el jugador ha recibido las bombas de fuego como obsequio inicial, estas pueden emplearse para derrotar al demonio de forma rápida.
+              El primer enfrentamiento con el Demonio del Refugio es opcional, y para aquellos que inician su primera partida, se recomienda encarecidamente evitar el combate saliendo de la sala. Sin embargo, si el jugador ha recibido las Bombas Fuego Negras como obsequio inicial, estas pueden emplearse para derrotar al demonio de forma rápida.
               Para el segundo encuentro, una vez atravesada la niebla, equípate el arma a dos manos y salta de la plataforma, 
               atacando para hacerle mucho daño.
               El demonio es lento y predecible. Lo ideal es rodear al jefe y atacarlo después de que haya ejecutado alguno de sus ataques lentos.
               Si tienes dificultad para quedarte cerca de él, siempre puedes optar por usar piromancia o magia.
               `,
     lore: `
-      <a href="">El Demonio del Refugio</a> es un demonio menor que emergió del Lecho del Caos, la entidad que apareció tras el intento de la Bruja de Izalith de generar un poder similar a la Primera Llama utilizando su Alma de Señor. Dicho experimento tuvo éxito, dando lugar a la Llama del Caos, mientras que Izalith y su poderosa alma se convirtieron en el semillero de una nueva forma de vida: la madre y origen de todos los demonios.
+      <a href="">El Demonio del Refugio</a> es un demonio menor que emergió del <a href="">Lecho del Caos</a>, la entidad que apareció tras el intento de la <a href="">Bruja de Izalith</a> de generar un poder similar a la Primera Llama utilizando su Alma de Señor. Dicho experimento tuvo éxito, dando lugar a la Llama del Caos, mientras que Izalith y su poderosa alma se convirtieron en el semillero de una nueva forma de vida: la madre y origen de todos los demonios.
       <br><br>
       Tras su nacimiento, el Demonio del Refugio sobrevivió a la guerra librada por los Caballeros Plateados de Gwyn, Señor de la Luz Solar, contra su propia especie, y logró escapar de las ruinas de Izalith Perdida llevándose consigo su imponente Gran Martillo Demoníaco, forjado a partir de arboledas de piedra.
       <br><br>
