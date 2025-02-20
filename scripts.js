@@ -1755,7 +1755,7 @@ document.addEventListener("DOMContentLoaded", function() {
         <div class="cards-container">
           <div class="card">
             <!-- Asegúrate de usar la ruta correcta -->
-            <img src="images/asilo.jpg" alt="Demonio del refugio">
+            <img src="images/asilo.jpg" alt="Demonio del Refugio">
             <div class="card-overlay"></div>
             <div class="card-info">
               <h3>Demonio del refugio</h3>
