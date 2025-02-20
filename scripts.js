@@ -2114,6 +2114,7 @@ document.addEventListener("DOMContentLoaded", function() {
    **********************/
   function openBossModal(bossName, direction = 'next') {
     console.log("openBossModal llamada con:", bossName, direction);
+    
   
     if (isTransitioning) {
       console.log("Transición en curso, se cancela la llamada.");
@@ -2360,10 +2361,9 @@ document.addEventListener("DOMContentLoaded", function() {
     const tempDiv = document.createElement("div");
     tempDiv.innerHTML = newBossHTML;
     const newDetail = tempDiv.firstElementChild;
-  
-    // Si el modal no está activo o no hay contenido previo (.boss-detail), usamos fade-in
+
+    // Si no hay elemento previo, usamos fade-in
     if (!modal.classList.contains("active") || !existingDetail) {
-      console.log("Usando fade-in");
       bossDetailsContainer.innerHTML = newBossHTML;
       const newElem = bossDetailsContainer.querySelector('.boss-detail');
       newElem.classList.add('fade-in');
@@ -2371,19 +2371,19 @@ document.addEventListener("DOMContentLoaded", function() {
         newElem.removeEventListener("animationend", handleAnimationEnd);
         isTransitioning = false;
       });
-      // Fallback: liberar bandera después de 600ms
+      // Fallback en caso de que la animación tarde más
       setTimeout(() => { isTransitioning = false; }, 600);
     } else {
-      console.log("Usando swap");
+      // Si ya hay un jefe mostrado, hacemos que ambos coexistan y se animen simultáneamente
       bossDetailsContainer.appendChild(newDetail);
-      // Forzamos reflow para activar la animación
+      // Forzamos reflow para que el navegador reconozca el nuevo elemento
       void newDetail.offsetWidth;
       const exitClass = (direction === 'next') ? 'slide-out-left' : 'slide-out-right';
       const enterClass = (direction === 'next') ? 'slide-in-right' : 'slide-in-left';
-  
+      
       newDetail.classList.add(enterClass);
       existingDetail.classList.add(exitClass);
-  
+
       newDetail.addEventListener("animationend", function handleAnimationEnd() {
         if (existingDetail) {
           existingDetail.remove();
@@ -2391,13 +2391,13 @@ document.addEventListener("DOMContentLoaded", function() {
         newDetail.removeEventListener("animationend", handleAnimationEnd);
         isTransitioning = false;
       });
-      // Fallback: liberar bandera después de 600ms
+      // Fallback en caso de que la animación tarde más
       setTimeout(() => { isTransitioning = false; }, 600);
     }
-  
-    // Aseguramos que el modal quede activo
+    // Activamos el modal
     modal.classList.add("active");
   }
+
   
   /**********************
    * Función getBossImgSrc *
@@ -2473,6 +2473,8 @@ document.addEventListener("DOMContentLoaded", function() {
       closeBossModal();
     }
   });
+
+  
   
   /**********************
    * Funciones para el Contenido (Menú y Tarjetas) *
