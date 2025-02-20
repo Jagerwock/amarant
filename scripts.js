@@ -1758,7 +1758,7 @@ document.addEventListener("DOMContentLoaded", function() {
             <img src="images/asilo.jpg" alt="Demonio del Refugio">
             <div class="card-overlay"></div>
             <div class="card-info">
-              <h3>Demonio del refugio</h3>
+              <h3>Demonio del Refugio</h3>
             </div>
           </div>
           <div class="card">
@@ -2081,7 +2081,7 @@ document.addEventListener("DOMContentLoaded", function() {
   let isTransitioning = false; // Controla si hay una animación en curso
   
   const bossList = [
-    "Demonio del refugio",
+    "Demonio del Refugio",
     "Demonio Salvaje",
     "Demonio de Tauro",
     "Demonio de Aries",
@@ -2403,7 +2403,7 @@ document.addEventListener("DOMContentLoaded", function() {
    * Función getBossImgSrc *
    **********************/
   function getBossImgSrc(bossName) {
-    if (bossName === "Demonio del refugio") {
+    if (bossName === "Demonio del Refugio") {
       return "images/asilo.jpg";
     } else if (bossName === "Demonio Salvaje") {
       return "images/salvaje.png";
