@@ -20,16 +20,16 @@ const bossDetails = {
     weaknesses:["Fuego", "Sangrado", "Armas de Caballero Negro"],
     dropsDetailed: [
       { item: "Humanidad", percentage: "100%" },
-      { item: "Llave gran peregrino", percentage: "Solo en el segundo encuentro, despues de hablar con Oscar" },
+      { item: "Llave del Gran Peregrino", percentage: "Solo en el segundo encuentro, después de hablar con Oscar" },
       { item: "Espada del Refugio", percentage: "Solo en el primer encuentro" }
     ],
     moves: [
-      { name: "Golpe de trasero", description: "El demonio se eleva, para despues caer, causando daño masivo alrededor suyo al impacto." },
-      { name: "Impulso del martillo", description: "Cuando el jugador este defrente del demonio, este lanzara un ataque de corto rango imposible de bloquear." },
+      { name: "Golpe de trasero", description: "El demonio se eleva, para después caer, causando daño masivo alrededor suyo al impacto." },
+      { name: "Impulso del martillo", description: "Cuando el jugador esté defrente del demonio, este lanzara un ataque de corto rango imposible de bloquear." },
       { name: "Golpe de martillo", description: "Un barrido horizontal amplio con el martillo, es facil de evitar debido a su deficiente seguimiento." },
-      { name: "Retroceso del martillo", description: "Cuando el jugador este a su derecha, hara una balanceo de retroceso, puede esquivarse si se rueda en el ultimo momento." },
+      { name: "Retroceso del martillo", description: "Cuando el jugador esté a su derecha, hara una balanceo de retroceso, puede esquivarse si se rueda en el ultimo momento." },
       { name: "Barrido lateral del martillo", description: "Misma idea del retroceso del martillo, pero se activa cuando el jugador este a su izquierda." },
-      { name: "Martillazo", description: "Un golpe descendente con gran alcance, abarca una zona amplia, se puede esquiva con facilidad." },
+      { name: "Martillazo", description: "Un golpe descendente con gran alcance, abarca una zona amplia, se puede esquivar con facilidad." },
       { name: "Martillazo saltante", description: "Cuando el jugador este lejos, el demonio vuela lentamente para luego dejar caer un golpe devastador, debido a su movimiento es facil de esquivar." },
       { name: "Doble balanceo del martillo", description: "Una secuencia de dos balanceos seguidos, tiene un movimiento facil de predecir, pero pueden ir seguidos de un martillazo adicional." }
     ],
@@ -87,7 +87,7 @@ const bossDetails = {
       { name: "Golpe de trasero", description: "El demonio se eleva, para despues caer, causando daño masivo alrededor suyo al impacto." },
       { name: "Golpe Demoledor", description: "Un poderoso ataque descendente con su arma que abarca una enorme distancia. Se puede esquivar rodando a la izquierda o derecha." },
       { name: "Doble Golpe Demoledor", description: "Ocurre despues de haber usado Golpe Demoledor. El Demonio Salvaje levanta su arma y lo vuelva a estampar, se esquiva rodando a la izquierda o derecha." },
-      { name: "Explosion de Llama", description: "El demonio balancea su arma hacia la izquierda, produciendo una enorme explosión frontal infligiendo daño mágico, Lo diferente de este ataque es que no afecta la zona trasera, haciendolo posible esquivarlo situándose detrás o por debajo del demonio." },
+      { name: "Explosión de Llama", description: "El demonio balancea su arma hacia la izquierda, produciendo una enorme explosión frontal que inflige daño mágico, lo diferente de este ataque es que no afecta la zona trasera, haciendolo posible esquivarlo situándose detrás o por debajo del demonio." },
       { name: "Explosión con Martillo", description: "Empuñando el catalizador con ambas manos, el demonio lo clava en el suelo, lo que desencadena una explosión masiva en el punto de impacto que se extiende también hacia la parte posterior." },
       { name: "Martillazo saltante", description: "Cuando el jugador este lejos, el demonio vuela lentamente para luego dejar caer un golpe devastador, debido a su movimiento es facil de esquivar." },
       { name: "Doble balanceo del martillo", description: "Parecido al Demonio del Refugio, hara una secuencia de dos balanceos seguidos, tiene un movimiento facil de predecir, pero pueden ir seguidos de un golpe adicional, puede ser bloqueado a costo de mucha estamina." },
