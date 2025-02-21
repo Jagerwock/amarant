@@ -3,7 +3,11 @@
 body { 
   margin: 0;
   padding: 0;
-  background-color: #1a1a1a;
+  background-image: url('./images/fondo.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
   color: #d4af37; 
   font-family: 'IM Fell English SC', serif;
 }
@@ -47,6 +51,16 @@ body {
 .user-icon:hover svg {
   fill: #ffcc00;
   filter: drop-shadow(0 0 8px rgba(255, 204, 0, 0.9));
+}
+
+a {
+  color: #d4af37; /* Color amarillo igual que el texto */
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+a:hover {
+  color: #ffcc00; /* Un tono más brillante para el hover */
+  text-shadow: 0 0 8px rgba(255, 204, 0, 0.9); /* Efecto de resalte */
 }
 
 /* ===========================

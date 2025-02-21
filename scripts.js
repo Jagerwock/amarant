@@ -2381,9 +2381,11 @@ document.addEventListener("DOMContentLoaded", function() {
       const exitClass = (direction === 'next') ? 'slide-out-left' : 'slide-out-right';
       const enterClass = (direction === 'next') ? 'slide-in-right' : 'slide-in-left';
       
-      newDetail.classList.add(enterClass);
+      requestAnimationFrame(() => {
+        newDetail.classList.add(enterClass);
+      });
       existingDetail.classList.add(exitClass);
-
+  
       newDetail.addEventListener("animationend", function handleAnimationEnd() {
         if (existingDetail) {
           existingDetail.remove();
@@ -2391,13 +2393,12 @@ document.addEventListener("DOMContentLoaded", function() {
         newDetail.removeEventListener("animationend", handleAnimationEnd);
         isTransitioning = false;
       });
-      // Fallback en caso de que la animación tarde más
+      // Fallback en caso de retraso en la animación
       setTimeout(() => { isTransitioning = false; }, 600);
     }
     // Activamos el modal
     modal.classList.add("active");
   }
-
   
   /**********************
    * Función getBossImgSrc *
