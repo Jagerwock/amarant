@@ -111,6 +111,25 @@ a:hover {
     transition: transform 0.6s ease-in-out, box-shadow 0.6s ease-in-out;
     margin: 10px;
   }
+
+  .card::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 20px; /* Altura inicial de la sombra */
+    background: radial-gradient(ellipse at center, rgba(0,0,0,0.5) 0%, transparent 80%);
+    transition: height 0.6s ease, background 0.6s ease;
+    pointer-events: none;
+  }
+  
+  /* Al pasar el mouse, la sombra crece */
+  .card:hover::after {
+    height: 40px;
+    background: radial-gradient(ellipse at center, rgba(0,0,0,0.8) 0%, transparent 80%);
+  }
   
   .card:hover {
     transform: scale(1.05);
@@ -137,14 +156,17 @@ a:hover {
     left: 0;
     bottom: 0;
     width: 100%;
-    height: 200px;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
-    transition: background 1s ease-in-out;
+    /* Ajusta la altura inicial para que sea una banda de sombra permanente */
+    height: 60px; 
+    /* Gradiente tenue en la parte de abajo */
+    background: linear-gradient(to top, rgba(0, 0, 0, 1), transparent);
+    transition: background 0.6s ease-in-out, height 0.6s ease-in-out;
     z-index: 1;
   }
   
   /* Al hacer hover, el overlay se oscurece sin moverse */
   .card:hover .card-overlay {
+    height: 250px;
     background: linear-gradient(to top, rgba(0, 0, 0, 1), transparent);
   }
   
