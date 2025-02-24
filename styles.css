@@ -12,12 +12,40 @@ body {
   font-family: 'IM Fell English SC', serif;
 }
 
+h1 {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.boss-group h2 {
+  font-size: 2.5rem;
+  text-align: left;
+  margin-right: 40px;
+  margin-bottom: 20px;
+  padding-right: 20px;
+  margin-left: 20px;
+}
+
 .navbar {
+  display: flex;               
+  justify-content: space-between; /* Separa extremos: links a la izq, ícono a la der */
+  align-items: center;           
+  background-color: #000;        
+  padding: 10px 20px;            
+}
+
+.nav-links {
+  margin: 0 auto; /* Esto ayuda a que los enlaces queden centrados en el espacio disponible */
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #111;
-  padding: 10px 20px;
+  gap: 1rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #d4af37;
+  font-family: 'IM Fell English SC', serif;
 }
 
 .navbar a {
