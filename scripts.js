@@ -2079,445 +2079,392 @@ document.addEventListener("DOMContentLoaded", function() {
     `
     addCardClickListeners();
   } else if (section === "armas") {
-    loadWeaponsContent();
+    loadWeaponsScript();
   } else {
     contentArea.innerHTML = `<p>Contenido no disponible para la sección ${section}.</p>`;
   }
 }
 
-  let currentIndex = 0;
-  let isTransitioning = false; // Controla si hay una animación en curso
-  
-  const bossList = [
-    "Demonio del Refugio",
-    "Demonio Salvaje",
-    "Demonio de Tauro",
-    "Demonio de Aries",
-    "Gárgolas Campana",
-    "Dragón Boquiabierto",
-    "Quelaag la Bruja del Caos",
-    "Mariposa Lunar",
-    "Sif, el Gran Lobo Gris",
-    "Golem de Hierro",
-    "Gwyndolin el Sol Oscuro",
-    "Ornstein & Smough",
-    "Priscilla la Mestiza",
-    "Seath el Descamado",
-    "Molinete",
-    "Nito el Rey del Cementerio",
-    "Cuatro Reyes",
-    "Descarga Incesante",
-    "Sabio del Fuego Demoníaco",
-    "Demonio Ciempiés",
-    "Lecho del Caos",
-    "Gwyn, Señor de la Ceniza",
-    "Guardián del Santuario",
-    "Caballero Artorias",
-    "Kalameet, el Dragón Negro",
-    "Manus, Padre del Abismo"
-  ];
-  
-  /**********************
-   * Funciones Flechas  *
-   **********************/
-  function openBossModal(bossName, direction = 'next') {
-    console.log("openBossModal llamada con:", bossName, direction);
+let currentIndex = 0;
+let isTransitioning = false;
+const bossList = [
+  "Demonio del Refugio",
+  "Demonio Salvaje",
+  "Demonio de Tauro",
+  "Demonio de Aries",
+  "Gárgolas Campana",
+  "Dragón Boquiabierto",
+  "Quelaag la Bruja del Caos",
+  "Mariposa Lunar",
+  "Sif, el Gran Lobo Gris",
+  "Golem de Hierro",
+  "Gwyndolin el Sol Oscuro",
+  "Ornstein & Smough",
+  "Priscilla la Mestiza",
+  "Seath el Descamado",
+  "Molinete",
+  "Nito el Rey del Cementerio",
+  "Cuatro Reyes",
+  "Descarga Incesante",
+  "Sabio del Fuego Demoníaco",
+  "Demonio Ciempiés",
+  "Lecho del Caos",
+  "Gwyn, Señor de la Ceniza",
+  "Guardián del Santuario",
+  "Caballero Artorias",
+  "Kalameet, el Dragón Negro",
+  "Manus, Padre del Abismo"
+];
 
-    if (isTransitioning) {
-      console.log("Transición en curso, se cancela la llamada.");
-      return;
-    }
-    isTransitioning = true;
-  
-    currentIndex = bossList.indexOf(bossName);
-    const modal = document.getElementById("boss-modal");
-    const bossDetailsContainer = document.getElementById("boss-details");
-    // Usamos la variable global bossDetails
-    const details = window.bossDetails[bossName];
-    const existingDetail = bossDetailsContainer.querySelector('.boss-detail');
-    console.log("existingDetail:", existingDetail);
-    console.log("Modal active:", modal.classList.contains("active"));
-  
-    if (!details) {
-      bossDetailsContainer.innerHTML = `<p>No hay información disponible para ${bossName}.</p>`;
-      modal.classList.add("active");
-      isTransitioning = false;
-      return;
-    }
+function openBossModal(bossName, direction = 'next') {
+  if (isTransitioning) return;
+  isTransitioning = true;
 
-    let statsTable = "";
-    if (bossName === "Ornstein & Smough") {
-      const levels = ["NG", "NG+1", "NG+2", "NG+3", "NG+4", "NG+5", "NG+6"];
-      let ornsteinLife = [], superOrnsteinLife = [], smoughLife = [], superSmoughLife = [];
-      for (let i = 0; i < levels.length; i++) {
-        const statKey = "ng" + i;
-        const lifeStat = details.stats[statKey];
-        if (lifeStat) {
-          const parts = lifeStat.split("/");
-          ornsteinLife.push(parts[0] || "-");
-          superOrnsteinLife.push(parts[1] || "-");
-          smoughLife.push(parts[2] || "-");
-          superSmoughLife.push(parts[3] || "-");
-        } else {
-          ornsteinLife.push("-");
-          superOrnsteinLife.push("-");
-          smoughLife.push("-");
-          superSmoughLife.push("-");
-        }
-      }
-      statsTable = `
-        <table>
-          <tr>
-            <th></th>
-            ${levels.map(level => `<th>${level}</th>`).join("")}
-          </tr>
-          <tr>
-            <th>Vida (Ornstein)</th>
-            ${ornsteinLife.map(val => `<td>${val}</td>`).join("")}
-          </tr>
-          <tr>
-            <th>Vida (Super Ornstein)</th>
-            ${superOrnsteinLife.map(val => `<td>${val}</td>`).join("")}
-          </tr>
-          <tr>
-            <th>Vida (Smough)</th>
-            ${smoughLife.map(val => `<td>${val}</td>`).join("")}
-          </tr>
-          <tr>
-            <th>Vida (Super Smough)</th>
-            ${superSmoughLife.map(val => `<td>${val}</td>`).join("")}
-          </tr>
-          <tr>
-            <th>Almas</th>
-            <td>${details.stats.almas0 || 0}</td>
-            <td>${details.stats.almas1 || 0}</td>
-            <td>${details.stats.almas2 || 0}</td>
-            <td>${details.stats.almas3 || 0}</td>
-            <td>${details.stats.almas4 || 0}</td>
-            <td>${details.stats.almas5 || 0}</td>
-            <td>${details.stats.almas6 || 0}</td>
-          </tr>
-        </table>
-      `;
-    } else {
-      statsTable = `
-        <table>
-          <tr>
-            <th></th>
-            <th>NG</th>
-            <th>NG+1</th>
-            <th>NG+2</th>
-            <th>NG+3</th>
-            <th>NG+4</th>
-            <th>NG+5</th>
-            <th>NG+6</th>
-          </tr>
-          <tr>
-            <th>Vida</th>
-            <td>${details.stats.ng0 || 0}</td>
-            <td>${details.stats.ng1 || 0}</td>
-            <td>${details.stats.ng2 || 0}</td>
-            <td>${details.stats.ng3 || 0}</td>
-            <td>${details.stats.ng4 || 0}</td>
-            <td>${details.stats.ng5 || 0}</td>
-            <td>${details.stats.ng6 || 0}</td>
-          </tr>
-          <tr>
-            <th>Almas</th>
-            <td>${details.stats.almas0 || 0}</td>
-            <td>${details.stats.almas1 || 0}</td>
-            <td>${details.stats.almas2 || 0}</td>
-            <td>${details.stats.almas3 || 0}</td>
-            <td>${details.stats.almas4 || 0}</td>
-            <td>${details.stats.almas5 || 0}</td>
-            <td>${details.stats.almas6 || 0}</td>
-          </tr>
-        </table>
-      `;
-    }
+  currentIndex = bossList.indexOf(bossName);
+  const modal = document.getElementById("boss-modal");
+  const bossDetailsContainer = document.getElementById("boss-details");
+  const details = window.bossDetails[bossName];
+  const existingDetail = bossDetailsContainer.querySelector('.boss-detail');
 
-    const summoningSection = details.summoning
-      ? `<div class="boss-summoning">
-           <h3 style="font-size: 28px;">Invocación</h3>
-           <hr class="section-divider">
-           ${
-             Array.isArray(details.summoning)
-               ? `<ul>${details.summoning.map(inv => `<li>${inv}</li>`).join('')}</ul>`
-               : `<p>${details.summoning}</p>`
-           }
-         </div>`
-      : '';
-
-    const weakTable = details.weaknesses && details.weaknesses.length > 0
-      ? `<ul class="weaknesses-list">${details.weaknesses.map(weak => `<li>${weak}</li>`).join("")}</ul>`
-      : `<p>Ninguna</p>`;
-
-    const dropsList = details.dropsDetailed 
-      ? `<ul>${details.dropsDetailed.map(drop => `<li>${drop.item} (${drop.percentage})</li>`).join("")}</ul>`
-      : `<p>${details.drop || "Sin drop específico"}</p>`;
-
-    let movesList = "";
-    if (bossName === "Ornstein & Smough") {
-      const bossMoves = details.moves;
-      movesList += `<div class="boss-moves-divisions">`;
-      movesList += `<div class="boss-move-division" style="margin-bottom: 20px;">
-                      <h4 style="font-size: 28px; text-align: left; margin-bottom: 10px;">Ornstein</h4>
-                      <ul style="list-style-position: inside; text-align: left;">${
-                        bossMoves.ornstein
-                          ? bossMoves.ornstein.map(move => `<li><strong class="move-name">${move.name}:</strong> ${move.description}</li>`).join("")
-                          : `<li>Sin movimientos definidos para Ornstein</li>`
-                      }</ul>
-                    </div>`;
-      movesList += `<div class="boss-move-division" style="margin-bottom: 20px;">
-                      <h4 style="font-size: 28px; text-align: left; margin-bottom: 10px;">Super Ornstein</h4>
-                      <ul style="list-style-position: inside; text-align: left;">${
-                        bossMoves.superOrnstein
-                          ? bossMoves.superOrnstein.map(move => `<li><strong class="move-name">${move.name}:</strong> ${move.description}</li>`).join("")
-                          : `<li>Sin movimientos definidos para Super Ornstein</li>`
-                      }</ul>
-                    </div>`;
-      movesList += `<div class="boss-move-division" style="margin-bottom: 20px;">
-                      <h4 style="font-size: 28px; text-align: left; margin-bottom: 10px;">Smough</h4>
-                      <ul style="list-style-position: inside; text-align: left;">${
-                        bossMoves.smough
-                          ? bossMoves.smough.map(move => `<li><strong class="move-name">${move.name}:</strong> ${move.description}</li>`).join("")
-                          : `<li>Sin movimientos definidos para Smough</li>`
-                      }</ul>
-                    </div>`;
-      movesList += `<div class="boss-move-division" style="margin-bottom: 20px;">
-                      <h4 style="font-size: 28px; text-align: left; margin-bottom: 10px;">Super Smough</h4>
-                      <ul style="list-style-position: inside; text-align: left;">${
-                        bossMoves.superSmough
-                          ? bossMoves.superSmough.map(move => `<li><strong class="move-name">${move.name}:</strong> ${move.description}</li>`).join("")
-                          : `<li>Sin movimientos definidos para Super Smough</li>`
-                      }</ul>
-                    </div>`;
-      movesList += `</div>`;
-    } else {
-      movesList = details.moves && Array.isArray(details.moves)
-        ? `<ul>${details.moves.map(move => `<li><strong class="move-name">${move.name}:</strong> ${move.description}</li>`).join("")}</ul>`
-        : `<p>No se han especificado movimientos.</p>`;
-    }
-
-    const strategiesSection = details.bestStrategies 
-      ? `<p>${details.bestStrategies}</p>`
-      : `<p>No se han especificado estrategias.</p>`;
-
-    const loreSection = `
-      <div class="boss-lore">
-        <h3 style="font-size: 28px;">Lore</h3>
-        <hr class="section-divider">
-        ${details.lore ? `<p>${details.lore}</p>` : `<p>No hay información de lore.</p>`}
-      </div>
-    `;
-
-    const curiositiesSection = details.curiosities && details.curiosities.length > 0
-      ? `<div class="boss-curiosities">
-           <h3 style="font-size: 28px;">Curiosidades</h3>
-           <hr class="section-divider">
-           <ul>${details.curiosities.map(curiosity => `<li>${curiosity.description}</li>`).join('')}</ul>
-         </div>`
-      : `<div class="boss-curiosities">
-           <h3 style="font-size: 28px;">Curiosidades</h3>
-           <hr class="section-divider">
-           <p>No hay información de curiosidades.</p>
-         </div>`;
-
-    const newBossHTML = `
-      <div class="boss-detail">
-        <img src="${getBossImgSrc(bossName)}" alt="${bossName}" class="boss-detail-img">
-        <div class="boss-detail-info">
-          <h2 style="text-align: center; font-size: 40px;">${bossName}</h2>
-          <div class="boss-stats">
-            <h3 style="font-size: 28px;">Estadísticas</h3>
-            <hr class="section-divider">
-            ${statsTable}
-          </div>
-          ${summoningSection}
-          <div class="boss-immunities">
-            <h3 style="font-size: 28px;">Debilidades</h3>
-            <hr class="section-divider">
-            ${weakTable}
-          </div>
-          <div class="boss-drops">
-            <h3 style="font-size: 28px;">Drops</h3>
-            <hr class="section-divider">
-            ${dropsList}
-          </div>
-          <div class="boss-moves">
-            <h3 style="font-size: 28px;">Movimientos</h3>
-            <hr class="section-divider">
-            ${movesList}
-          </div>
-          <div class="boss-strategies">
-            <h3 style="font-size: 28px;">Estrategias</h3>
-            <hr class="section-divider">
-            ${strategiesSection}
-          </div>
-          ${loreSection}
-          ${curiositiesSection}
-        </div>
-      </div>
-    `;
-
-    const tempDiv = document.createElement("div");
-    tempDiv.innerHTML = newBossHTML;
-    const newDetail = tempDiv.firstElementChild;
-    const existingDetail2 = bossDetailsContainer.querySelector('.boss-detail');
-
-    if (!modal.classList.contains("active") || !existingDetail2) {
-      bossDetailsContainer.innerHTML = newBossHTML;
-      const newElem = bossDetailsContainer.querySelector('.boss-detail');
-      newElem.classList.add('fade-in');
-      newElem.addEventListener("animationend", function handleAnimationEnd() {
-        newElem.removeEventListener("animationend", handleAnimationEnd);
-        isTransitioning = false;
-      });
-      setTimeout(() => { isTransitioning = false; }, 600);
-    } else {
-      bossDetailsContainer.appendChild(newDetail);
-      void newDetail.offsetWidth;
-      const exitClass = (direction === 'next') ? 'slide-out-left' : 'slide-out-right';
-      const enterClass = (direction === 'next') ? 'slide-in-right' : 'slide-in-left';
-      requestAnimationFrame(() => {
-        newDetail.classList.add(enterClass);
-      });
-      existingDetail2.classList.add(exitClass);
-      newDetail.addEventListener("animationend", function handleAnimationEnd() {
-        if (existingDetail2) {
-          existingDetail2.remove();
-        }
-        newDetail.removeEventListener("animationend", handleAnimationEnd);
-        isTransitioning = false;
-      });
-      setTimeout(() => { isTransitioning = false; }, 600);
-    }
+  if (!details) {
+    bossDetailsContainer.innerHTML = `<p>No hay información disponible para ${bossName}.</p>`;
     modal.classList.add("active");
+    isTransitioning = false;
+    return;
   }
 
-  function getBossImgSrc(bossName) {
-    if (bossName === "Demonio del Refugio") {
-      return "images/asilo.jpg";
-    } else if (bossName === "Demonio Salvaje") {
-      return "images/salvaje.png";
-    } else if (bossName === "Demonio de Tauro") {
-      return "images/tauro.png";
-    } else if (bossName === "Demonio de Aries") {
-      return "images/aries.png";
-    } else if (bossName === "Gárgolas Campana") {
-      return "images/campana.png";
-    } else if (bossName === "Dragón Boquiabierto") { 
-      return "images/boquiabierto.png";
-    } else if (bossName === "Quelaag la Bruja del Caos") {
-      return "images/queelag.png";
-    } else if (bossName === "Mariposa Lunar") {
-      return "images/lunar.png";
-    } else if (bossName === "Sif, el Gran Lobo Gris") {
-      return "images/sif.png";
-    } else if (bossName === "Golem de Hierro") {
-      return "images/golem.png";
-    } else if (bossName === "Gwyndolin el Sol Oscuro") {
-      return "images/gwyndolin.png";
-    } else if (bossName === "Ornstein & Smough") {
-      return "images/ornstein.png";
-    } else if (bossName === "Priscilla la Mestiza") {
-      return "images/priscilla.png";
-    } else if (bossName === "Seath el Descamado") { 
-      return "images/seath.png";
-    } else if (bossName === "Molinete") { 
-      return "images/molinete.png";
-    } else if (bossName === "Nito el Rey del Cementerio") { 
-      return "images/nito.png";
-    } else if (bossName === "Cuatro Reyes") { 
-      return "images/reyes.png";
-    } else if (bossName === "Descarga Incesante") { 
-      return "images/incesante.png";
-    } else if (bossName === "Sabio del Fuego Demoníaco") { 
-      return "images/sabio.png";
-    } else if (bossName === "Demonio Ciempiés") { 
-      return "images/ciempies.png";
-    } else if (bossName === "Lecho del Caos") { 
-      return "images/bed.png";
-    } else if (bossName === "Gwyn, Señor de la Ceniza") { 
-      return "images/gwyn.png";
-    } else if (bossName === "Guardián del Santuario") { 
-      return "images/santuario.png";
-    } else if (bossName === "Caballero Artorias") { 
-      return "images/artorias.png";
-    } else if (bossName === "Kalameet, el Dragón Negro") { 
-      return "images/kalameet.png";
-    } else if (bossName === "Manus, Padre del Abismo") {
-      return "images/manus.png";
-    }
-    return "";
-  }
-
-  function closeBossModal() {
-    const modal = document.getElementById("boss-modal");
-    modal.classList.remove("active");
-  }
-  document.querySelector(".close-button").addEventListener("click", closeBossModal);
-  window.addEventListener("click", function(event) {
-    const modal = document.getElementById("boss-modal");
-    if (event.target === modal) {
-      closeBossModal();
-    }
-  });
-  
-  function loadWeaponsScript() {
-    if (window.weaponsScriptLoaded) {
-      document.getElementById("content-area").innerHTML = window.contentMappingHTML.armas;
-      if (typeof window.addWeaponCardListeners === "function") {
-        window.addWeaponCardListeners();
+  let statsTable = "";
+  if (bossName === "Ornstein & Smough") {
+    const levels = ["NG", "NG+1", "NG+2", "NG+3", "NG+4", "NG+5", "NG+6"];
+    let ornsteinLife = [], superOrnsteinLife = [], smoughLife = [], superSmoughLife = [];
+    for (let i = 0; i < levels.length; i++) {
+      const statKey = "ng" + i;
+      const lifeStat = details.stats[statKey];
+      if (lifeStat) {
+        const parts = lifeStat.split("/");
+        ornsteinLife.push(parts[0] || "-");
+        superOrnsteinLife.push(parts[1] || "-");
+        smoughLife.push(parts[2] || "-");
+        superSmoughLife.push(parts[3] || "-");
+      } else {
+        ornsteinLife.push("-");
+        superOrnsteinLife.push("-");
+        smoughLife.push("-");
+        superSmoughLife.push("-");
       }
-      return;
     }
-    const script = document.createElement("script");
-    script.src = "weapons.js";
-    script.onload = function() {
-      window.weaponsScriptLoaded = true;
-      document.getElementById("content-area").innerHTML = window.contentMappingHTML.armas;
-      if (typeof window.addWeaponCardListeners === "function") {
-        window.addWeaponCardListeners();
-      }
-    };
-    document.body.appendChild(script);
+    statsTable = `
+      <table>
+        <tr>
+          <th></th>
+          ${levels.map(level => `<th>${level}</th>`).join("")}
+        </tr>
+        <tr>
+          <th>Vida (Ornstein)</th>
+          ${ornsteinLife.map(val => `<td>${val}</td>`).join("")}
+        </tr>
+        <tr>
+          <th>Vida (Super Ornstein)</th>
+          ${superOrnsteinLife.map(val => `<td>${val}</td>`).join("")}
+        </tr>
+        <tr>
+          <th>Vida (Smough)</th>
+          ${smoughLife.map(val => `<td>${val}</td>`).join("")}
+        </tr>
+        <tr>
+          <th>Vida (Super Smough)</th>
+          ${superSmoughLife.map(val => `<td>${val}</td>`).join("")}
+        </tr>
+        <tr>
+          <th>Almas</th>
+          <td>${details.stats.almas0 || 0}</td>
+          <td>${details.stats.almas1 || 0}</td>
+          <td>${details.stats.almas2 || 0}</td>
+          <td>${details.stats.almas3 || 0}</td>
+          <td>${details.stats.almas4 || 0}</td>
+          <td>${details.stats.almas5 || 0}</td>
+          <td>${details.stats.almas6 || 0}</td>
+        </tr>
+      </table>
+    `;
+  } else {
+    statsTable = `
+      <table>
+        <tr>
+          <th></th>
+          <th>NG</th>
+          <th>NG+1</th>
+          <th>NG+2</th>
+          <th>NG+3</th>
+          <th>NG+4</th>
+          <th>NG+5</th>
+          <th>NG+6</th>
+        </tr>
+        <tr>
+          <th>Vida</th>
+          <td>${details.stats.ng0 || 0}</td>
+          <td>${details.stats.ng1 || 0}</td>
+          <td>${details.stats.ng2 || 0}</td>
+          <td>${details.stats.ng3 || 0}</td>
+          <td>${details.stats.ng4 || 0}</td>
+          <td>${details.stats.ng5 || 0}</td>
+          <td>${details.stats.ng6 || 0}</td>
+        </tr>
+        <tr>
+          <th>Almas</th>
+          <td>${details.stats.almas0 || 0}</td>
+          <td>${details.stats.almas1 || 0}</td>
+          <td>${details.stats.almas2 || 0}</td>
+          <td>${details.stats.almas3 || 0}</td>
+          <td>${details.stats.almas4 || 0}</td>
+          <td>${details.stats.almas5 || 0}</td>
+          <td>${details.stats.almas6 || 0}</td>
+        </tr>
+      </table>
+    `;
   }
-  
-  function addCardClickListeners() {
-    const cards = document.querySelectorAll(".card");
-    console.log(`Found ${cards.length} cards`);
-    cards.forEach(card => {
-      card.addEventListener("click", function() {
-        const bossName = this.querySelector("h3").innerText;
-        console.log(`Card clicked: ${bossName}`);
-        openBossModal(bossName);
-      });
-    });
+
+  const summoningSection = details.summoning
+    ? `<div class="boss-summoning"><h3 style="font-size: 28px;">Invocación</h3><hr class="section-divider">${
+         Array.isArray(details.summoning)
+           ? `<ul>${details.summoning.map(inv => `<li>${inv}</li>`).join('')}</ul>`
+           : `<p>${details.summoning}</p>`
+       }</div>`
+    : '';
+
+  const weakTable = details.weaknesses && details.weaknesses.length > 0
+    ? `<ul class="weaknesses-list">${details.weaknesses.map(weak => `<li>${weak}</li>`).join("")}</ul>`
+    : `<p>Ninguna</p>`;
+
+  const dropsList = details.dropsDetailed
+    ? `<ul>${details.dropsDetailed.map(drop => `<li>${drop.item} (${drop.percentage})</li>`).join("")}</ul>`
+    : `<p>${details.drop || "Sin drop específico"}</p>`;
+
+  let movesList = "";
+  if (bossName === "Ornstein & Smough") {
+    const bossMoves = details.moves;
+    movesList += `<div class="boss-moves-divisions">`;
+    movesList += `<div class="boss-move-division" style="margin-bottom: 20px;">
+                    <h4 style="font-size: 28px; text-align: left; margin-bottom: 10px;">Ornstein</h4>
+                    <ul style="list-style-position: inside; text-align: left;">${
+                      bossMoves.ornstein
+                        ? bossMoves.ornstein.map(move => `<li><strong class="move-name">${move.name}:</strong> ${move.description}</li>`).join("")
+                        : `<li>Sin movimientos definidos para Ornstein</li>`
+                    }</ul>
+                  </div>`;
+    movesList += `<div class="boss-move-division" style="margin-bottom: 20px;">
+                    <h4 style="font-size: 28px; text-align: left; margin-bottom: 10px;">Super Ornstein</h4>
+                    <ul style="list-style-position: inside; text-align: left;">${
+                      bossMoves.superOrnstein
+                        ? bossMoves.superOrnstein.map(move => `<li><strong class="move-name">${move.name}:</strong> ${move.description}</li>`).join("")
+                        : `<li>Sin movimientos definidos para Super Ornstein</li>`
+                    }</ul>
+                  </div>`;
+    movesList += `<div class="boss-move-division" style="margin-bottom: 20px;">
+                    <h4 style="font-size: 28px; text-align: left; margin-bottom: 10px;">Smough</h4>
+                    <ul style="list-style-position: inside; text-align: left;">${
+                      bossMoves.smough
+                        ? bossMoves.smough.map(move => `<li><strong class="move-name">${move.name}:</strong> ${move.description}</li>`).join("")
+                        : `<li>Sin movimientos definidos para Smough</li>`
+                    }</ul>
+                  </div>`;
+    movesList += `<div class="boss-move-division" style="margin-bottom: 20px;">
+                    <h4 style="font-size: 28px; text-align: left; margin-bottom: 10px;">Super Smough</h4>
+                    <ul style="list-style-position: inside; text-align: left;">${
+                      bossMoves.superSmough
+                        ? bossMoves.superSmough.map(move => `<li><strong class="move-name">${move.name}:</strong> ${move.description}</li>`).join("")
+                        : `<li>Sin movimientos definidos para Super Smough</li>`
+                    }</ul>
+                  </div>`;
+    movesList += `</div>`;
+  } else {
+    movesList = details.moves && Array.isArray(details.moves)
+      ? `<ul>${details.moves.map(move => `<li><strong class="move-name">${move.name}:</strong> ${move.description}</li>`).join("")}</ul>`
+      : `<p>No se han especificado movimientos.</p>`;
   }
 
-  const navLinks = document.querySelectorAll(".nav-item");
-  navLinks.forEach(link => {
-    link.addEventListener("click", function(event) {
-      event.preventDefault();
-      const section = this.getAttribute("data-section");
-      updateContent(section);
+  const strategiesSection = details.bestStrategies 
+    ? `<p>${details.bestStrategies}</p>`
+    : `<p>No se han especificado estrategias.</p>`;
+
+  const loreSection = `
+    <div class="boss-lore">
+      <h3 style="font-size: 28px;">Lore</h3>
+      <hr class="section-divider">
+      ${details.lore ? `<p>${details.lore}</p>` : `<p>No hay información de lore.</p>`}
+    </div>
+  `;
+
+  const curiositiesSection = details.curiosities && details.curiosities.length > 0
+    ? `<div class="boss-curiosities">
+         <h3 style="font-size: 28px;">Curiosidades</h3>
+         <hr class="section-divider">
+         <ul>${details.curiosities.map(curiosity => `<li>${curiosity.description}</li>`).join('')}</ul>
+       </div>`
+    : `<div class="boss-curiosities">
+         <h3 style="font-size: 28px;">Curiosidades</h3>
+         <hr class="section-divider">
+         <p>No hay información de curiosidades.</p>
+       </div>`;
+
+  const newBossHTML = `
+    <div class="boss-detail">
+      <img src="${getBossImgSrc(bossName)}" alt="${bossName}" class="boss-detail-img">
+      <div class="boss-detail-info">
+        <h2 style="text-align: center; font-size: 40px;">${bossName}</h2>
+        <div class="boss-stats">
+          <h3 style="font-size: 28px;">Estadísticas</h3>
+          <hr class="section-divider">
+          ${statsTable}
+        </div>
+        ${summoningSection}
+        <div class="boss-immunities">
+          <h3 style="font-size: 28px;">Debilidades</h3>
+          <hr class="section-divider">
+          ${weakTable}
+        </div>
+        <div class="boss-drops">
+          <h3 style="font-size: 28px;">Drops</h3>
+          <hr class="section-divider">
+          ${dropsList}
+        </div>
+        <div class="boss-moves">
+          <h3 style="font-size: 28px;">Movimientos</h3>
+          <hr class="section-divider">
+          ${movesList}
+        </div>
+        <div class="boss-strategies">
+          <h3 style="font-size: 28px;">Estrategias</h3>
+          <hr class="section-divider">
+          ${strategiesSection}
+        </div>
+        ${loreSection}
+        ${curiositiesSection}
+      </div>
+    </div>
+  `;
+
+  const tempDiv = document.createElement("div");
+  tempDiv.innerHTML = newBossHTML;
+  const newDetail = tempDiv.firstElementChild;
+  const existingDetail2 = bossDetailsContainer.querySelector('.boss-detail');
+
+  if (!modal.classList.contains("active") || !existingDetail2) {
+    bossDetailsContainer.innerHTML = newBossHTML;
+    const newElem = bossDetailsContainer.querySelector('.boss-detail');
+    newElem.classList.add('fade-in');
+    newElem.addEventListener("animationend", function handleAnimationEnd() {
+      newElem.removeEventListener("animationend", handleAnimationEnd);
+      isTransitioning = false;
+    });
+    setTimeout(() => { isTransitioning = false; }, 600);
+  } else {
+    bossDetailsContainer.appendChild(newDetail);
+    void newDetail.offsetWidth;
+    const exitClass = direction === 'next' ? 'slide-out-left' : 'slide-out-right';
+    const enterClass = direction === 'next' ? 'slide-in-right' : 'slide-in-left';
+    requestAnimationFrame(() => {
+      newDetail.classList.add(enterClass);
+    });
+    existingDetail2.classList.add(exitClass);
+    newDetail.addEventListener("animationend", function handleAnimationEnd() {
+      if (existingDetail2) existingDetail2.remove();
+      newDetail.removeEventListener("animationend", handleAnimationEnd);
+      isTransitioning = false;
+    });
+    setTimeout(() => { isTransitioning = false; }, 600);
+  }
+  modal.classList.add("active");
+}
+
+function getBossImgSrc(bossName) {
+  if (bossName === "Demonio del Refugio") return "images/asilo.jpg";
+  if (bossName === "Demonio Salvaje") return "images/salvaje.png";
+  if (bossName === "Demonio de Tauro") return "images/tauro.png";
+  if (bossName === "Demonio de Aries") return "images/aries.png";
+  if (bossName === "Gárgolas Campana") return "images/campana.png";
+  if (bossName === "Dragón Boquiabierto") return "images/boquiabierto.png";
+  if (bossName === "Quelaag la Bruja del Caos") return "images/queelag.png";
+  if (bossName === "Mariposa Lunar") return "images/lunar.png";
+  if (bossName === "Sif, el Gran Lobo Gris") return "images/sif.png";
+  if (bossName === "Golem de Hierro") return "images/golem.png";
+  if (bossName === "Gwyndolin el Sol Oscuro") return "images/gwyndolin.png";
+  if (bossName === "Ornstein & Smough") return "images/ornstein.png";
+  if (bossName === "Priscilla la Mestiza") return "images/priscilla.png";
+  if (bossName === "Seath el Descamado") return "images/seath.png";
+  if (bossName === "Molinete") return "images/molinete.png";
+  if (bossName === "Nito el Rey del Cementerio") return "images/nito.png";
+  if (bossName === "Cuatro Reyes") return "images/reyes.png";
+  if (bossName === "Descarga Incesante") return "images/incesante.png";
+  if (bossName === "Sabio del Fuego Demoníaco") return "images/sabio.png";
+  if (bossName === "Demonio Ciempiés") return "images/ciempies.png";
+  if (bossName === "Lecho del Caos") return "images/bed.png";
+  if (bossName === "Gwyn, Señor de la Ceniza") return "images/gwyn.png";
+  if (bossName === "Guardián del Santuario") return "images/santuario.png";
+  if (bossName === "Caballero Artorias") return "images/artorias.png";
+  if (bossName === "Kalameet, el Dragón Negro") return "images/kalameet.png";
+  if (bossName === "Manus, Padre del Abismo") return "images/manus.png";
+  return "";
+}
+
+function closeBossModal() {
+  const modal = document.getElementById("boss-modal");
+  modal.classList.remove("active");
+}
+
+document.querySelector(".close-button").addEventListener("click", closeBossModal);
+window.addEventListener("click", function(event) {
+  const modal = document.getElementById("boss-modal");
+  if (event.target === modal) closeBossModal();
+});
+
+function loadWeaponsScript() {
+  if (window.weaponsScriptLoaded) {
+    document.getElementById("content-area").innerHTML = window.contentMappingHTML.armas;
+    if (typeof window.addWeaponCardListeners === "function") window.addWeaponCardListeners();
+    return;
+  }
+  const script = document.createElement("script");
+  script.src = "weapons.js";
+  script.onload = function() {
+    window.weaponsScriptLoaded = true;
+    document.getElementById("content-area").innerHTML = window.contentMappingHTML.armas;
+    if (typeof window.addWeaponCardListeners === "function") window.addWeaponCardListeners();
+  };
+  document.body.appendChild(script);
+}
+
+function addCardClickListeners() {
+  const cards = document.querySelectorAll(".card");
+  cards.forEach(card => {
+    card.addEventListener("click", function() {
+      const bossName = this.querySelector("h3").innerText;
+      openBossModal(bossName);
     });
   });
+}
 
-  // Iniciamos con jefes
-  addCardClickListeners();
-  updateContent("jefes");
-
-  document.querySelector(".arrow.arrow-right").addEventListener("click", function() {
-    if (isTransitioning) return;
-    currentIndex = (currentIndex + 1) % bossList.length;
-    openBossModal(bossList[currentIndex], 'next');
+const navLinks = document.querySelectorAll(".nav-item");
+navLinks.forEach(link => {
+  link.addEventListener("click", function(e) {
+    e.preventDefault();
+    const section = this.getAttribute("data-section");
+    updateContent(section);
   });
+});
 
-  document.querySelector(".arrow.arrow-left").addEventListener("click", function() {
-    if (isTransitioning) return;
-    currentIndex = (currentIndex - 1 + bossList.length) % bossList.length;
-    openBossModal(bossList[currentIndex], 'prev');
-  });
+addCardClickListeners();
+updateContent("jefes");
+
+document.querySelector(".arrow.arrow-right").addEventListener("click", function() {
+  if (isTransitioning) return;
+  currentIndex = (currentIndex + 1) % bossList.length;
+  openBossModal(bossList[currentIndex], 'next');
+});
+
+document.querySelector(".arrow.arrow-left").addEventListener("click", function() {
+  if (isTransitioning) return;
+  currentIndex = (currentIndex - 1 + bossList.length) % bossList.length;
+  openBossModal(bossList[currentIndex], 'prev');
+});
 });
