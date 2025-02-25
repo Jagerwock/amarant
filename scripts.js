@@ -1,4 +1,4 @@
-const bossDetails = {
+window.bossDetails = {
   "Demonio del Refugio": {
     stats: {
       ng0: 813,
@@ -1740,12 +1740,14 @@ const bossDetails = {
     ],
   }
 };
-document.addEventListener("DOMContentLoaded", function() {
-  const contentArea = document.getElementById("content-area");
+window.contentMappingHTML = window.contentMappingHTML || {};
 
-  // Objeto con el HTML para la sección de jefes
-  const contentMappingHTML = {
-    jefes: `
+document.addEventListener("DOMContentLoaded", function() {
+
+  function updateContent(section) {
+    const contentArea = document.getElementById("content-area");
+    if (section === "jefes") {
+      contentArea.innerHTML = `
       <h1>Jefes</h1>
       
       <!-- Grupo 1: Refugio de los no muertos -->
@@ -2075,7 +2077,13 @@ document.addEventListener("DOMContentLoaded", function() {
         </div>
       </section>
     `
-  };
+    addCardClickListeners();
+  } else if (section === "armas") {
+    loadWeaponsContent();
+  } else {
+    contentArea.innerHTML = `<p>Contenido no disponible para la sección ${section}.</p>`;
+  }
+}
 
   let currentIndex = 0;
   let isTransitioning = false; // Controla si hay una animación en curso
@@ -2114,34 +2122,29 @@ document.addEventListener("DOMContentLoaded", function() {
    **********************/
   function openBossModal(bossName, direction = 'next') {
     console.log("openBossModal llamada con:", bossName, direction);
-    
-  
+
     if (isTransitioning) {
       console.log("Transición en curso, se cancela la llamada.");
       return;
     }
     isTransitioning = true;
   
-    // Actualizamos el índice actual basándonos en el bossName
     currentIndex = bossList.indexOf(bossName);
     const modal = document.getElementById("boss-modal");
     const bossDetailsContainer = document.getElementById("boss-details");
-    const details = bossDetails[bossName];
-  
-    // Depuración: comprobamos si ya existe contenido y si el modal está activo
+    // Usamos la variable global bossDetails
+    const details = window.bossDetails[bossName];
     const existingDetail = bossDetailsContainer.querySelector('.boss-detail');
     console.log("existingDetail:", existingDetail);
     console.log("Modal active:", modal.classList.contains("active"));
   
-    // Si no hay detalles, se muestra un mensaje y se activa el modal
     if (!details) {
       bossDetailsContainer.innerHTML = `<p>No hay información disponible para ${bossName}.</p>`;
       modal.classList.add("active");
       isTransitioning = false;
       return;
     }
-  
-    // Generación del contenido (Calling Card)
+
     let statsTable = "";
     if (bossName === "Ornstein & Smough") {
       const levels = ["NG", "NG+1", "NG+2", "NG+3", "NG+4", "NG+5", "NG+6"];
@@ -2186,13 +2189,13 @@ document.addEventListener("DOMContentLoaded", function() {
           </tr>
           <tr>
             <th>Almas</th>
-            <td>${details.stats.almas0}</td>
-            <td>${details.stats.almas1}</td>
-            <td>${details.stats.almas2}</td>
-            <td>${details.stats.almas3}</td>
-            <td>${details.stats.almas4}</td>
-            <td>${details.stats.almas5}</td>
-            <td>${details.stats.almas6}</td>
+            <td>${details.stats.almas0 || 0}</td>
+            <td>${details.stats.almas1 || 0}</td>
+            <td>${details.stats.almas2 || 0}</td>
+            <td>${details.stats.almas3 || 0}</td>
+            <td>${details.stats.almas4 || 0}</td>
+            <td>${details.stats.almas5 || 0}</td>
+            <td>${details.stats.almas6 || 0}</td>
           </tr>
         </table>
       `;
@@ -2211,46 +2214,48 @@ document.addEventListener("DOMContentLoaded", function() {
           </tr>
           <tr>
             <th>Vida</th>
-            <td>${details.stats.ng0}</td>
-            <td>${details.stats.ng1}</td>
-            <td>${details.stats.ng2}</td>
-            <td>${details.stats.ng3}</td>
-            <td>${details.stats.ng4}</td>
-            <td>${details.stats.ng5}</td>
-            <td>${details.stats.ng6}</td>
+            <td>${details.stats.ng0 || 0}</td>
+            <td>${details.stats.ng1 || 0}</td>
+            <td>${details.stats.ng2 || 0}</td>
+            <td>${details.stats.ng3 || 0}</td>
+            <td>${details.stats.ng4 || 0}</td>
+            <td>${details.stats.ng5 || 0}</td>
+            <td>${details.stats.ng6 || 0}</td>
           </tr>
           <tr>
             <th>Almas</th>
-            <td>${details.stats.almas0}</td>
-            <td>${details.stats.almas1}</td>
-            <td>${details.stats.almas2}</td>
-            <td>${details.stats.almas3}</td>
-            <td>${details.stats.almas4}</td>
-            <td>${details.stats.almas5}</td>
-            <td>${details.stats.almas6}</td>
+            <td>${details.stats.almas0 || 0}</td>
+            <td>${details.stats.almas1 || 0}</td>
+            <td>${details.stats.almas2 || 0}</td>
+            <td>${details.stats.almas3 || 0}</td>
+            <td>${details.stats.almas4 || 0}</td>
+            <td>${details.stats.almas5 || 0}</td>
+            <td>${details.stats.almas6 || 0}</td>
           </tr>
         </table>
       `;
     }
-  
+
     const summoningSection = details.summoning
       ? `<div class="boss-summoning">
            <h3 style="font-size: 28px;">Invocación</h3>
            <hr class="section-divider">
-           ${Array.isArray(details.summoning)
-             ? `<ul>${details.summoning.map(inv => `<li>${inv}</li>`).join('')}</ul>`
-             : `<p>${details.summoning}</p>`}
+           ${
+             Array.isArray(details.summoning)
+               ? `<ul>${details.summoning.map(inv => `<li>${inv}</li>`).join('')}</ul>`
+               : `<p>${details.summoning}</p>`
+           }
          </div>`
       : '';
-  
+
     const weakTable = details.weaknesses && details.weaknesses.length > 0
       ? `<ul class="weaknesses-list">${details.weaknesses.map(weak => `<li>${weak}</li>`).join("")}</ul>`
       : `<p>Ninguna</p>`;
-  
+
     const dropsList = details.dropsDetailed 
       ? `<ul>${details.dropsDetailed.map(drop => `<li>${drop.item} (${drop.percentage})</li>`).join("")}</ul>`
-      : `<p>${details.drop}</p>`;
-  
+      : `<p>${details.drop || "Sin drop específico"}</p>`;
+
     let movesList = "";
     if (bossName === "Ornstein & Smough") {
       const bossMoves = details.moves;
@@ -2293,11 +2298,11 @@ document.addEventListener("DOMContentLoaded", function() {
         ? `<ul>${details.moves.map(move => `<li><strong class="move-name">${move.name}:</strong> ${move.description}</li>`).join("")}</ul>`
         : `<p>No se han especificado movimientos.</p>`;
     }
-  
+
     const strategiesSection = details.bestStrategies 
       ? `<p>${details.bestStrategies}</p>`
       : `<p>No se han especificado estrategias.</p>`;
-  
+
     const loreSection = `
       <div class="boss-lore">
         <h3 style="font-size: 28px;">Lore</h3>
@@ -2305,7 +2310,7 @@ document.addEventListener("DOMContentLoaded", function() {
         ${details.lore ? `<p>${details.lore}</p>` : `<p>No hay información de lore.</p>`}
       </div>
     `;
-  
+
     const curiositiesSection = details.curiosities && details.curiosities.length > 0
       ? `<div class="boss-curiosities">
            <h3 style="font-size: 28px;">Curiosidades</h3>
@@ -2317,53 +2322,50 @@ document.addEventListener("DOMContentLoaded", function() {
            <hr class="section-divider">
            <p>No hay información de curiosidades.</p>
          </div>`;
-  
-    // Armado del HTML final de la Calling Card
+
     const newBossHTML = `
-        <div class="boss-detail">
-          <img src="${getBossImgSrc(bossName)}" alt="${bossName}" class="boss-detail-img">
-          <div class="boss-detail-info">
-            <h2 style="text-align: center; font-size: 40px;">${bossName}</h2>
-            <div class="boss-stats">
-              <h3 style="font-size: 28px;">Estadísticas</h3>
-              <hr class="section-divider">
-              ${statsTable}
-            </div>
-            ${summoningSection}
-            <div class="boss-immunities">
-              <h3 style="font-size: 28px;">Debilidades</h3>
-              <hr class="section-divider">
-              ${weakTable}
-            </div>
-            <div class="boss-drops">
-              <h3 style="font-size: 28px;">Drops</h3>
-              <hr class="section-divider">
-              ${dropsList}
-            </div>
-            <div class="boss-moves">
-              <h3 style="font-size: 28px;">Movimientos</h3>
-              <hr class="section-divider">
-              ${movesList}
-            </div>
-            <div class="boss-strategies">
-              <h3 style="font-size: 28px;">Estrategias</h3>
-              <hr class="section-divider">
-              ${strategiesSection}
-            </div>
-            ${loreSection}
-            ${curiositiesSection}
+      <div class="boss-detail">
+        <img src="${getBossImgSrc(bossName)}" alt="${bossName}" class="boss-detail-img">
+        <div class="boss-detail-info">
+          <h2 style="text-align: center; font-size: 40px;">${bossName}</h2>
+          <div class="boss-stats">
+            <h3 style="font-size: 28px;">Estadísticas</h3>
+            <hr class="section-divider">
+            ${statsTable}
           </div>
+          ${summoningSection}
+          <div class="boss-immunities">
+            <h3 style="font-size: 28px;">Debilidades</h3>
+            <hr class="section-divider">
+            ${weakTable}
+          </div>
+          <div class="boss-drops">
+            <h3 style="font-size: 28px;">Drops</h3>
+            <hr class="section-divider">
+            ${dropsList}
+          </div>
+          <div class="boss-moves">
+            <h3 style="font-size: 28px;">Movimientos</h3>
+            <hr class="section-divider">
+            ${movesList}
+          </div>
+          <div class="boss-strategies">
+            <h3 style="font-size: 28px;">Estrategias</h3>
+            <hr class="section-divider">
+            ${strategiesSection}
+          </div>
+          ${loreSection}
+          ${curiositiesSection}
         </div>
-      `;
-  
-    // Animación: Transición suave
-    // Creamos un nuevo elemento a partir del HTML generado
+      </div>
+    `;
+
     const tempDiv = document.createElement("div");
     tempDiv.innerHTML = newBossHTML;
     const newDetail = tempDiv.firstElementChild;
+    const existingDetail2 = bossDetailsContainer.querySelector('.boss-detail');
 
-    // Si no hay elemento previo, usamos fade-in
-    if (!modal.classList.contains("active") || !existingDetail) {
+    if (!modal.classList.contains("active") || !existingDetail2) {
       bossDetailsContainer.innerHTML = newBossHTML;
       const newElem = bossDetailsContainer.querySelector('.boss-detail');
       newElem.classList.add('fade-in');
@@ -2371,38 +2373,28 @@ document.addEventListener("DOMContentLoaded", function() {
         newElem.removeEventListener("animationend", handleAnimationEnd);
         isTransitioning = false;
       });
-      // Fallback en caso de que la animación tarde más
       setTimeout(() => { isTransitioning = false; }, 600);
     } else {
-      // Si ya hay un jefe mostrado, hacemos que ambos coexistan y se animen simultáneamente
       bossDetailsContainer.appendChild(newDetail);
-      // Forzamos reflow para que el navegador reconozca el nuevo elemento
       void newDetail.offsetWidth;
       const exitClass = (direction === 'next') ? 'slide-out-left' : 'slide-out-right';
       const enterClass = (direction === 'next') ? 'slide-in-right' : 'slide-in-left';
-      
       requestAnimationFrame(() => {
         newDetail.classList.add(enterClass);
       });
-      existingDetail.classList.add(exitClass);
-  
+      existingDetail2.classList.add(exitClass);
       newDetail.addEventListener("animationend", function handleAnimationEnd() {
-        if (existingDetail) {
-          existingDetail.remove();
+        if (existingDetail2) {
+          existingDetail2.remove();
         }
         newDetail.removeEventListener("animationend", handleAnimationEnd);
         isTransitioning = false;
       });
-      // Fallback en caso de retraso en la animación
       setTimeout(() => { isTransitioning = false; }, 600);
     }
-    // Activamos el modal
     modal.classList.add("active");
   }
-  
-  /**********************
-   * Función getBossImgSrc *
-   **********************/
+
   function getBossImgSrc(bossName) {
     if (bossName === "Demonio del Refugio") {
       return "images/asilo.jpg";
@@ -2459,10 +2451,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     return "";
   }
-  
-  /**********************
-   * Función para Cerrar el Modal *
-   **********************/
+
   function closeBossModal() {
     const modal = document.getElementById("boss-modal");
     modal.classList.remove("active");
@@ -2474,20 +2463,25 @@ document.addEventListener("DOMContentLoaded", function() {
       closeBossModal();
     }
   });
-
   
-  
-  /**********************
-   * Funciones para el Contenido (Menú y Tarjetas) *
-   **********************/
-  
-  function updateContent(section) { 
-    if (contentMappingHTML[section]) {
-      contentArea.innerHTML = contentMappingHTML[section];
-      addCardClickListeners();
-    } else {
-      contentArea.innerHTML = `<h1>${section}</h1><p>Contenido no disponible.</p>`;
+  function loadWeaponsScript() {
+    if (window.weaponsScriptLoaded) {
+      document.getElementById("content-area").innerHTML = window.contentMappingHTML.armas;
+      if (typeof window.addWeaponCardListeners === "function") {
+        window.addWeaponCardListeners();
+      }
+      return;
     }
+    const script = document.createElement("script");
+    script.src = "weapons.js";
+    script.onload = function() {
+      window.weaponsScriptLoaded = true;
+      document.getElementById("content-area").innerHTML = window.contentMappingHTML.armas;
+      if (typeof window.addWeaponCardListeners === "function") {
+        window.addWeaponCardListeners();
+      }
+    };
+    document.body.appendChild(script);
   }
   
   function addCardClickListeners() {
@@ -2495,27 +2489,32 @@ document.addEventListener("DOMContentLoaded", function() {
     console.log(`Found ${cards.length} cards`);
     cards.forEach(card => {
       card.addEventListener("click", function() {
-        const bossName = this.querySelector(".card-info h3").innerText;
+        const bossName = this.querySelector("h3").innerText;
         console.log(`Card clicked: ${bossName}`);
         openBossModal(bossName);
       });
     });
   }
-  
+
+  const navLinks = document.querySelectorAll(".nav-item");
+  navLinks.forEach(link => {
+    link.addEventListener("click", function(event) {
+      event.preventDefault();
+      const section = this.getAttribute("data-section");
+      updateContent(section);
+    });
+  });
+
+  // Iniciamos con jefes
   addCardClickListeners();
   updateContent("jefes");
-  
-  /* 
-    Agregamos los event listeners para las flechas de navegación:
-    - La flecha derecha para pasar al siguiente jefe.
-    - La flecha izquierda para retroceder al jefe anterior.
-  */
+
   document.querySelector(".arrow.arrow-right").addEventListener("click", function() {
-    if (isTransitioning) return; // Evitar conflictos durante animaciones
+    if (isTransitioning) return;
     currentIndex = (currentIndex + 1) % bossList.length;
     openBossModal(bossList[currentIndex], 'next');
   });
-  
+
   document.querySelector(".arrow.arrow-left").addEventListener("click", function() {
     if (isTransitioning) return;
     currentIndex = (currentIndex - 1 + bossList.length) % bossList.length;
