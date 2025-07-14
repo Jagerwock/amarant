@@ -66,9 +66,12 @@ const contentMappingWeapons = {
     </section>
   `
 };
-
 const weaponDetails = {
   "Daga": {
+    gallery: [
+      "images/daga.png",         // Imagen principal
+      "images/daga_extra1.png"   // Imagen adicional (ejemplo)
+    ],
     description: `
       <p>La <strong>Daga</strong> es un arma de Dark Souls con ataques veloces, ideal para críticos tras un parry o backstab.</p>
       <blockquote>
@@ -78,6 +81,14 @@ const weaponDetails = {
         “Con ataques de tajo y estocada, esta daga es útil en diversas situaciones.”
       </blockquote>
     `,
+    stats: {
+      requiredStr: 4,
+      requiredDex: 8,
+      weight: 0.5,
+      durability: 200,
+      attackType: "Corte / Estocada",
+      weaponType: "Daga"
+    },
     howToGet: `
       <ul>
         <li>Equipo inicial para la clase <strong>Hechicero</strong>.</li>
@@ -92,51 +103,51 @@ const weaponDetails = {
       </ul>
     `,
     upgradeTable: `
-      <table class="upgrade-table">
+      <table class="upgrade-table" style="border-collapse: collapse; width: 100%;">
         <thead>
-          <tr>
-            <th>Nivel</th>
-            <th>Daño Físico</th>
-            <th>Daño Mágico</th>
-            <th>Escalado</th>
-            <th>Estabilidad</th>
+          <tr style="background-color: #333; color: #fff;">
+            <th style="padding: 8px;">Nivel</th>
+            <th style="padding: 8px;">Daño Físico</th>
+            <th style="padding: 8px;">Daño Mágico</th>
+            <th style="padding: 8px;">Escalado</th>
+            <th style="padding: 8px;">Estabilidad</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>Regular +0</td>
-            <td>56</td>
-            <td>-</td>
-            <td>E (Destreza)</td>
-            <td>26</td>
+            <td style="padding: 8px;">Regular +0</td>
+            <td style="padding: 8px;">56</td>
+            <td style="padding: 8px;">-</td>
+            <td style="padding: 8px;">E (Destreza)</td>
+            <td style="padding: 8px;">26</td>
           </tr>
           <tr>
-            <td>Regular +5</td>
-            <td>84</td>
-            <td>-</td>
-            <td>E/B</td>
-            <td>26</td>
+            <td style="padding: 8px;">Regular +5</td>
+            <td style="padding: 8px;">84</td>
+            <td style="padding: 8px;">-</td>
+            <td style="padding: 8px;">E/B</td>
+            <td style="padding: 8px;">26</td>
           </tr>
           <tr>
-            <td>Regular +10</td>
-            <td>112</td>
-            <td>-</td>
-            <td>E/B</td>
-            <td>26</td>
+            <td style="padding: 8px;">Regular +10</td>
+            <td style="padding: 8px;">112</td>
+            <td style="padding: 8px;">-</td>
+            <td style="padding: 8px;">E/B</td>
+            <td style="padding: 8px;">26</td>
           </tr>
           <tr>
-            <td>Regular +15</td>
-            <td>140</td>
-            <td>-</td>
-            <td>E/A</td>
-            <td>26</td>
+            <td style="padding: 8px;">Regular +15</td>
+            <td style="padding: 8px;">140</td>
+            <td style="padding: 8px;">-</td>
+            <td style="padding: 8px;">E/A</td>
+            <td style="padding: 8px;">26</td>
           </tr>
           <tr>
-            <td>Lightning +5</td>
-            <td>140</td>
-            <td>140</td>
-            <td>-</td>
-            <td>26</td>
+            <td style="padding: 8px;">Lightning +5</td>
+            <td style="padding: 8px;">140</td>
+            <td style="padding: 8px;">140</td>
+            <td style="padding: 8px;">-</td>
+            <td style="padding: 8px;">26</td>
           </tr>
         </tbody>
       </table>
@@ -187,7 +198,6 @@ const weaponDetails = {
         requirements: "Ascua de Fuego",
         notes: "Escala poco, pero brinda daño elemental de fuego."
       }
-      // Agrega más si deseas (Lightning, Chaos, etc.)
     }
   },
 

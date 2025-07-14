@@ -39,6 +39,60 @@ h1 {
   gap: 1rem;
 }
 
+.nav-item-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.nav-icon {
+  width: 24px;
+  height: 24px;
+  object-fit: cover;
+  margin-right: 4px;
+}
+
+.nav-item-container a {
+  display: flex;
+  align-items: center;
+}
+
+.nav-arrow {
+  margin-left: 4px;
+  font-size: 0.8em;
+  transition: transform 0.3s;
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #000;
+  border: 1px solid #d4af37;
+  padding: 5px 10px;
+  z-index: 100;
+  white-space: nowrap;
+}
+
+.dropdown a {
+  color: #d4af37;
+  text-decoration: none;
+  display: block;
+  padding: 2px 0;
+  font-size: 16px;
+  font-family: 'IM Fell English SC', serif;
+}
+
+.nav-item-container:hover .dropdown {
+  display: block;
+}
+
+.nav-item-container:hover .nav-arrow {
+  transform: rotate(180deg);
+}
+
+
 .nav-links a {
   text-decoration: none;
   color: #d4af37;

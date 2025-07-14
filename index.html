@@ -9,17 +9,89 @@
 </head>
 <body>
   <nav class="navbar">
-    <div class="nav-links">
-      <a href="#lore" class="nav-item" data-section="lore">Lore</a>
-      <a href="#lugares" class="nav-item" data-section="lugares">Lugares</a>
-      <a href="#personajes" class="nav-item" data-section="personajes">Personajes</a>
-      <a href="#jefes" class="nav-item" data-section="jefes">Jefes</a>
-      <a href="#enemigos" class="nav-item" data-section="enemigos">Enemigos</a>
-      <a href="#armas" class="nav-item" data-section="armas">Armas</a>
-      <a href="#hechizos" class="nav-item" data-section="hechizos">Hechizos</a>
-      <a href="#objetos" class="nav-item" data-section="objetos">Objetos</a>
-      <a href="#trofeos" class="nav-item" data-section="trofeos">Trofeos</a>
-    </div>
+      <div class="nav-links">
+        <div class="nav-item-container">
+          <img src="images/gwyn.png" class="nav-icon" alt="Lore icon">
+          <a href="#lore" class="nav-item" data-section="lore">Lore <span class="nav-arrow">&#9660;</span></a>
+          <div class="dropdown">
+            <a href="#">Historia</a>
+            <a href="#">Cronología</a>
+            <a href="#">Mitos</a>
+          </div>
+        </div>
+        <div class="nav-item-container">
+          <img src="images/santuario.png" class="nav-icon" alt="Lugares icon">
+          <a href="#lugares" class="nav-item" data-section="lugares">Lugares <span class="nav-arrow">&#9660;</span></a>
+          <div class="dropdown">
+            <a href="#">Principales</a>
+            <a href="#">Secretos</a>
+            <a href="#">DLC</a>
+          </div>
+        </div>
+        <div class="nav-item-container">
+          <img src="images/boquiabierto.png" class="nav-icon" alt="Personajes icon">
+          <a href="#personajes" class="nav-item" data-section="personajes">Personajes <span class="nav-arrow">&#9660;</span></a>
+          <div class="dropdown">
+            <a href="#">Aliados</a>
+            <a href="#">NPCs</a>
+            <a href="#">Cazadores</a>
+          </div>
+        </div>
+        <div class="nav-item-container">
+          <img src="images/artorias.png" class="nav-icon" alt="Jefes icon">
+          <a href="#jefes" class="nav-item" data-section="jefes">Jefes <span class="nav-arrow">&#9660;</span></a>
+          <div class="dropdown">
+            <a href="#">Story</a>
+            <a href="#">Opcionales</a>
+            <a href="#">DLC</a>
+          </div>
+        </div>
+        <div class="nav-item-container">
+          <img src="images/salvaje.png" class="nav-icon" alt="Enemigos icon">
+          <a href="#enemigos" class="nav-item" data-section="enemigos">Enemigos <span class="nav-arrow">&#9660;</span></a>
+          <div class="dropdown">
+            <a href="#">Comunes</a>
+            <a href="#">Elites</a>
+            <a href="#">Jefes Menores</a>
+          </div>
+        </div>
+        <div class="nav-item-container">
+          <img src="images/ornstein.png" class="nav-icon" alt="Armas icon">
+          <a href="#armas" class="nav-item" data-section="armas">Armas <span class="nav-arrow">&#9660;</span></a>
+          <div class="dropdown">
+            <a href="#">Espadas</a>
+            <a href="#">Hachas</a>
+            <a href="#">Lanzas</a>
+          </div>
+        </div>
+        <div class="nav-item-container">
+          <img src="images/gwyndolin.png" class="nav-icon" alt="Hechizos icon">
+          <a href="#hechizos" class="nav-item" data-section="hechizos">Hechizos <span class="nav-arrow">&#9660;</span></a>
+          <div class="dropdown">
+            <a href="#">Milagros</a>
+            <a href="#">Piromancias</a>
+            <a href="#">Hechicerías</a>
+          </div>
+        </div>
+        <div class="nav-item-container">
+          <img src="images/campana.png" class="nav-icon" alt="Objetos icon">
+          <a href="#objetos" class="nav-item" data-section="objetos">Objetos <span class="nav-arrow">&#9660;</span></a>
+          <div class="dropdown">
+            <a href="#">Consumibles</a>
+            <a href="#">Claves</a>
+            <a href="#">Anillos</a>
+          </div>
+        </div>
+        <div class="nav-item-container">
+          <img src="images/reyes.png" class="nav-icon" alt="Trofeos icon">
+          <a href="#trofeos" class="nav-item" data-section="trofeos">Trofeos <span class="nav-arrow">&#9660;</span></a>
+          <div class="dropdown">
+            <a href="#">Base</a>
+            <a href="#">DLC</a>
+            <a href="#">Platinum</a>
+          </div>
+        </div>
+      </div>
     <div class="user-icon">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#d4af37" viewBox="0 0 24 24">
         <path d="M12 2a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 11c4.97 0 9 4.03 9 9H3c0-4.97 4.03-9 9-9Z"/>
