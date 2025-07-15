@@ -2078,11 +2078,14 @@ document.addEventListener("DOMContentLoaded", function() {
       </section>
     `
     addCardClickListeners();
-  } else if (section === "armas") {
-    loadWeaponsScript();
-  } else {
-    contentArea.innerHTML = `<p>Contenido no disponible para la sección ${section}.</p>`;
-  }
+    } else if (section === "lugares") {
+    document.getElementById("content-area").innerHTML = window.contentMappingHTML.lugares || "";
+    if (typeof window.addAreaCardListeners === "function") window.addAreaCardListeners();
+    } else if (section === "armas") {
+      loadWeaponsScript();
+    } else {
+      contentArea.innerHTML = `<p>Contenido no disponible para la sección ${section}.</p>`;
+    }
 }
 
 let currentIndex = 0;
