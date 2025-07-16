@@ -101,20 +101,31 @@
   </nav>
   
   <div id="content-area">
-    <!-- Aquí se inyecta el contenido (por ejemplo, la sección de jefes) -->
   </div>
   
-  <!-- Modal para mostrar detalles del jefe -->
   <div id="boss-modal" class="modal">
     <div class="arrow arrow-left">&#10094;</div>
     <div class="modal-content">
       <span class="close-button">&times;</span>
       <div id="boss-details">
-        <!-- Aquí se inyectará la información del jefe -->
       </div>
     </div>
     <div class="arrow arrow-right">&#10095;</div>
   </div>
+
+  <div id="area-modal" class="area-modal hidden">
+  <div class="area-modal-backdrop"></div>
+  <div class="area-modal-content">
+    <button class="area-modal-close">&times;</button>
+    <button class="area-modal-prev">&#8249;</button>
+    <div class="area-modal-body">
+      <h3 class="area-modal-title"></h3>
+      <img class="area-modal-img" src="" alt="">
+      <div class="area-modal-walkthrough"></div>
+    </div>
+    <button class="area-modal-next">&#8250;</button>
+  </div>
+</div>
 </body>
 </html>
 
