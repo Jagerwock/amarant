@@ -1751,11 +1751,11 @@ document.addEventListener("DOMContentLoaded", function() {
       <h1>Jefes</h1>
       
       <!-- Grupo 1: Refugio de los no muertos -->
-      <section class="boss-group">
+      <section class="boss-group dlc">
         <h2 style="margin-bottom: 20px;">Refugio de los no muertos</h2>
         <hr style="border: 1px solid gold; width: 100%; margin-bottom: 20px;">
         <div class="cards-container">
-          <div class="card">
+          <div class="card story">
             <!-- Asegúrate de usar la ruta correcta -->
             <img src="images/asilo.jpg" alt="Demonio del Refugio">
             <div class="card-overlay"></div>
@@ -1763,7 +1763,7 @@ document.addEventListener("DOMContentLoaded", function() {
               <h3>Demonio del Refugio</h3>
             </div>
           </div>
-          <div class="card">
+          <div class="card optional">
             <img src="images/salvaje.png" alt="Demonio Salvaje">
             <div class="card-overlay"></div>
             <div class="card-info">
@@ -1778,21 +1778,21 @@ document.addEventListener("DOMContentLoaded", function() {
         <h2 style="margin-bottom: 20px;">Burgo de los no muertos/Parroquia de los no muertos</h2>
         <hr style="border: 1px solid gold; width: 100%; margin-bottom: 20px;">
         <div class="cards-container">
-          <div class="card">
+          <div class="card story">
             <img src="images/tauro.png" alt="Demonio de Tauro">
             <div class="card-overlay"></div>
             <div class="card-info">
               <h3>Demonio de Tauro</h3>
             </div>
           </div>
-          <div class="card">
+          <div class="card optional">
             <img src="images/aries.png" alt="Demonio de Aries">
             <div class="card-overlay"></div>
             <div class="card-info">
               <h3>Demonio de Aries</h3>
             </div>
           </div>
-          <div class="card">
+          <div class="card story">
             <img src="images/campana.png" alt="Gárgolas Campana">
             <div class="card-overlay"></div>
             <div class="card-info">
@@ -1807,7 +1807,7 @@ document.addEventListener("DOMContentLoaded", function() {
         <h2 style="margin-bottom: 20px;">Profundidades</h2>
         <hr style="border: 1px solid gold; width: 100%; margin-bottom: 20px;">
         <div class="cards-container">
-          <div class="card">
+          <div class="card story">
             <img src="images/boquiabierto.png" alt="Dragón Boquiabierto">
             <div class="card-overlay"></div>
             <div class="card-info">
@@ -2092,6 +2092,22 @@ document.addEventListener("DOMContentLoaded", function() {
       contentArea.innerHTML = `<p>Contenido no disponible para la sección ${section}.</p>`;
     }
 }
+
+function filterBosses(filter) {
+    const groups = document.querySelectorAll('.boss-group');
+    groups.forEach(group => {
+      let visible = 0;
+      group.querySelectorAll('.card').forEach(card => {
+        if (filter === 'all' || card.classList.contains(filter)) {
+          card.style.display = '';
+          visible++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+      group.style.display = visible > 0 ? '' : 'none';
+    });
+  }
 
 let currentIndex = 0;
 let isTransitioning = false;
