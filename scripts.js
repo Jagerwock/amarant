@@ -1744,7 +1744,7 @@ window.contentMappingHTML = window.contentMappingHTML || {};
 
 document.addEventListener("DOMContentLoaded", function() {
 
-  function updateContent(section) {
+  function updateContent(section, filter = 'all') {
     const contentArea = document.getElementById("content-area");
     if (section === "jefes") {
       contentArea.innerHTML = `
@@ -2041,7 +2041,7 @@ document.addEventListener("DOMContentLoaded", function() {
       </section>
       
       <!-- Grupo 16: Bosque Real -->
-      <section class="boss-group">
+      <section class="boss-group dlc">
         <h2 style="margin-bottom: 20px;">Bosque Real</h2>
         <hr style="border: 1px solid gold; width: 100%; margin-bottom: 20px;">
         <div class="cards-container">
@@ -2063,7 +2063,7 @@ document.addEventListener("DOMContentLoaded", function() {
       </section>
       
       <!-- Grupo 17: Sima del Abismo -->
-      <section class="boss-group">
+      <section class="boss-group dlc">
         <h2 style="margin-bottom: 20px;">Sima del Abismo</h2>
         <hr style="border: 1px solid gold; width: 100%; margin-bottom: 20px;">
         <div class="cards-container">
@@ -2078,6 +2078,11 @@ document.addEventListener("DOMContentLoaded", function() {
       </section>
     `
     addCardClickListeners();
+    if(filter === 'dlc') {
+      document.querySelectorAll('.boss-group').forEach(g => {
+        if(!g.classList.contains('dlc')) g.style.display = 'none';
+      });
+    }
     } else if (section === "lugares") {
     document.getElementById("content-area").innerHTML = window.contentMappingHTML.lugares || "";
     if (typeof window.addAreaCardListeners === "function") window.addAreaCardListeners();
@@ -2452,9 +2457,27 @@ navLinks.forEach(link => {
   link.addEventListener("click", function(e) {
     e.preventDefault();
     const section = this.getAttribute("data-section");
-    updateContent(section);
+    document.querySelector('.nav-links').classList.remove('active');
   });
 });
+
+const subLinks = document.querySelectorAll('.sub-item');
+subLinks.forEach(link => {
+  link.addEventListener('click', function(e){
+    e.preventDefault();
+    const section = this.getAttribute('data-section');
+    const filter = this.getAttribute('data-filter');
+    updateContent(section, filter);
+    document.querySelector('.nav-links').classList.remove('active');
+  });
+});
+
+const navToggle = document.querySelector('.nav-toggle');
+if(navToggle){
+  navToggle.addEventListener('click', () => {
+    document.querySelector('.nav-links').classList.toggle('active');
+  });
+}
 
 addCardClickListeners();
 updateContent("jefes");
